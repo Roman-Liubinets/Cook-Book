@@ -25,12 +25,22 @@ app.directive("headerBlock", function () {
         replace: true,
         templateUrl: "template/header.html",
         controller: function ($scope, $http) {
+            
+            $scope.home = true;
+            $scope.recipe = false;
+
             $scope.menuNavigation = [{
                 name: "Home",
-                action: function () {}
+                action: function () {
+                    $scope.home = true;
+                    $scope.recipe = false;
+                }
           }, {
                 name: "Recipe Book",
-                action: function () {}
+                action: function () {
+                    $scope.home = false;
+                    $scope.recipe = true;
+                }
           }]
         }
     }
