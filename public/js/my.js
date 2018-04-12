@@ -19,7 +19,7 @@ app.config(function ($routeProvider) {
 //Створюємо контроллер
 app.controller('myCtrl', function ($scope, $http) {});
 
-//Директиви
+//Директиви 
 app.directive("headerBlock", function () {
     return {
         replace: true,
@@ -48,6 +48,24 @@ app.directive("footerBlock", function () {
     return {
         replace: true,
         templateUrl: "template/footer.html",
+        controller: function ($scope, $http) {}
+    }
+});
+
+//Директиви для сторінок з контентом
+
+app.directive("homeBlock", function () {
+    return {
+        replace: true,
+        templateUrl: "template/pages/home.html",
+        controller: function ($scope, $http) {}
+    }
+});
+
+app.directive("recipeBlock", function () {
+    return {
+        replace: true,
+        templateUrl: "template/pages/recipe.html",
         controller: function ($scope, $http) {}
     }
 });
