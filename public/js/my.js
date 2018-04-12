@@ -42,7 +42,7 @@ app.directive("headerBlock", function () {
                 action: function () {
                     $scope.home = false;
                     $scope.recipe = true;
-                    $scope.newRecipe = false; 
+                    $scope.newRecipe = false;
                 }
           }]
         }
@@ -88,10 +88,19 @@ app.directive("newrecipeBlock", function () {
         replace: true,
         templateUrl: "template/pages/newRecipe.html",
         controller: function ($scope, $http) {
+
             $scope.newRecipeFunc = function () {
                 $scope.newRecipe = true;
                 $scope.home = false;
                 $scope.recipe = false;
+            }
+
+            $scope.ingrdArray = [];
+
+            $scope.addToArray = function (ingr) {
+                $scope.ingrdArray.push(ingr);
+                $scope.ingredients = "";
+                console.log($scope.ingrdArray);
             }
         }
     }

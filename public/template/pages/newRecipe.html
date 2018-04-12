@@ -1,7 +1,19 @@
 <div ng-show="newRecipe">
     <div class="container">
-        <div class="newRecipe-heading">
-            <h2>Add Recipe</h2>
+        <div class="newRecipe-container">
+            <div class="newRecipe-heading">
+                <h2>Add Recipe</h2>
+            </div>
+            <div class="newRecipe-data">
+                <label for="recipeName">Recipe Name: <input type="text" id="recipeName"></label>
+                <label for="recipeIngrd">Ingredients: <input type="text" id="recipeIngrd" ng-model="ingredients"></label>
+                <input type="button" value="Add" ng-click="addToArray(ingredients)">
+                <div class="newRecipe-Ingrd">
+                    <ul>
+                        <li ng-repeat="n in ingrdArray">{{n}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
