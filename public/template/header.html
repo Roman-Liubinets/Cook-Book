@@ -7,8 +7,9 @@
             <nav class="menu-container">
                 <div class="navigation">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Recipe Book</a></li>
+                        <li ng-repeat="btn in menuNavigation">
+                            <a href="" ng-click="btn.action()">{{btn.name}}</a>
+                        </li>
                     </ul>
                 </div>
             </nav>

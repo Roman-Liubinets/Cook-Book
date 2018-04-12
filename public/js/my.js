@@ -25,9 +25,13 @@ app.directive("headerBlock", function () {
         replace: true,
         templateUrl: "template/header.html",
         controller: function ($scope, $http) {
-          $scope.menuNavBtn = [{
-              
-          }]  
+            $scope.menuNavigation = [{
+                name: "Home",
+                action: function () {}
+          }, {
+                name: "Recipe Book",
+                action: function () {}
+          }]
         }
     }
 });
@@ -44,4 +48,6 @@ app.directive("footerBlock", function () {
     return {
         replace: true,
         templateUrl: "template/footer.html",
-        c
+        controller: function ($scope, $http) {}
+    }
+});
