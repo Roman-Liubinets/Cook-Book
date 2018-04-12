@@ -25,21 +25,24 @@ app.directive("headerBlock", function () {
         replace: true,
         templateUrl: "template/header.html",
         controller: function ($scope, $http) {
-            
+
             $scope.home = true;
             $scope.recipe = false;
+            $scope.newRecipe = false;
 
             $scope.menuNavigation = [{
                 name: "Home",
                 action: function () {
                     $scope.home = true;
                     $scope.recipe = false;
+                    $scope.newRecipe = false;
                 }
           }, {
                 name: "Recipe Book",
                 action: function () {
                     $scope.home = false;
                     $scope.recipe = true;
+                    $scope.newRecipe = false; 
                 }
           }]
         }
@@ -77,5 +80,19 @@ app.directive("recipeBlock", function () {
         replace: true,
         templateUrl: "template/pages/recipe.html",
         controller: function ($scope, $http) {}
+    }
+});
+
+app.directive("newrecipeBlock", function () {
+    return {
+        replace: true,
+        templateUrl: "template/pages/newRecipe.html",
+        controller: function ($scope, $http) {
+            $scope.newRecipeFunc = function () {
+                $scope.newRecipe = true;
+                $scope.home = false;
+                $scope.recipe = false;
+            }
+        }
     }
 });
