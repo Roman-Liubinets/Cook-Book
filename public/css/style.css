@@ -89,6 +89,12 @@ body {
     border: 0px solid black;
     font-weight: bold;
     color: white;
+    float: left;
+    margin-right: 15px;
+}
+
+.add-button:hover {
+    background-color: #9dd9b8;
 }
 
 .sort-button {
@@ -98,6 +104,11 @@ body {
     border: 0px solid black;
     font-weight: bold;
     color: white;
+    float: left;
+}
+
+.sort-button:hover {
+    background-color: #969696;
 }
 
 /*footer section*/
