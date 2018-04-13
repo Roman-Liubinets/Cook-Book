@@ -82,7 +82,14 @@ app.directive("recipeBlock", function () {
     return {
         replace: true,
         templateUrl: "template/pages/recipe.html",
-        controller: function ($scope, $http) {}
+        controller: function ($scope, $http) {
+            $scope.showRecipe = function() {
+                $scope.recipePage = true;
+                $scope.newRecipe = false;
+                $scope.home = false;
+                $scope.recipe = false;
+            }
+        }
     }
 });
 
@@ -105,6 +112,7 @@ app.directive("newrecipeBlock", function () {
                 $scope.ingrdArray.push(ingr);
                 $scope.ingredients = "";
                 console.log($scope.ingrdArray);
+//                $scope.currentDate = new Date();
             }
         }
     }
@@ -115,13 +123,12 @@ app.directive("recipecontenBlock", function () {
         replace: true,
         templateUrl: "template/pages/recipePage.html",
         controller: function ($scope, $http) {
-            
-            $scope.showRecipe = function() {
-                $scope.recipePage = true;
+            $scope.backRecipe = function() {
+                $scope.recipePage = false;
                 $scope.newRecipe = false;
                 $scope.home = false;
-                $scope.recipe = false;
-            }
+                $scope.recipe = true;
+            } 
         }
     }
 });
