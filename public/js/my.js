@@ -29,6 +29,7 @@ app.directive("headerBlock", function () {
             $scope.home = true;
             $scope.recipe = false;
             $scope.newRecipe = false;
+            $scope.recipePage = false;
 
             $scope.menuNavigation = [{
                 name: "Home",
@@ -36,6 +37,7 @@ app.directive("headerBlock", function () {
                     $scope.home = true;
                     $scope.recipe = false;
                     $scope.newRecipe = false;
+                    $scope.recipePage = false;
                 }
           }, {
                 name: "Recipe Book",
@@ -43,6 +45,7 @@ app.directive("headerBlock", function () {
                     $scope.home = false;
                     $scope.recipe = true;
                     $scope.newRecipe = false;
+                    $scope.recipePage = false;
                 }
           }]
         }
@@ -93,6 +96,7 @@ app.directive("newrecipeBlock", function () {
                 $scope.newRecipe = true;
                 $scope.home = false;
                 $scope.recipe = false;
+                $scope.recipePage = false;
             }
 
             $scope.ingrdArray = [];
@@ -101,6 +105,22 @@ app.directive("newrecipeBlock", function () {
                 $scope.ingrdArray.push(ingr);
                 $scope.ingredients = "";
                 console.log($scope.ingrdArray);
+            }
+        }
+    }
+});
+
+app.directive("recipecontenBlock", function () {
+    return {
+        replace: true,
+        templateUrl: "template/pages/recipePage.html",
+        controller: function ($scope, $http) {
+            
+            $scope.showRecipe = function() {
+                $scope.recipePage = true;
+                $scope.newRecipe = false;
+                $scope.home = false;
+                $scope.recipe = false;
             }
         }
     }
