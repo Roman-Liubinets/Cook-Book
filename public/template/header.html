@@ -1,18 +1,16 @@
 <header>
     <div class="container">
-        <div class="header-heading">
-            <h1>COOKBOOK</h1>
-        </div>
-        <div class="header-navigation">
-            <nav class="menu-container">
-                <div class="navigation">
-                    <ul>
-                        <li ng-repeat="btn in menuNavigation">
-                            <a href="" ng-click="btn.action()">{{btn.name}}</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+        <div class="header-container">
+            <div class="header-heading">
+                <h1>COOKBOOK</h1>
+            </div>
+            <div class="header-navigation">
+                <nav class="menu-container">
+                    <div class="navigation" ng-repeat="btn in menuNavigation">
+                        <span><a href="" ng-click="btn.action()">{{btn.name}}</a></span>
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
 </header>

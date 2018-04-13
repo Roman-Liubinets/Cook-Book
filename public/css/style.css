@@ -1,0 +1,121 @@
+html,
+body {
+    min-width: 1122px;
+    min-height: 550px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+    min-height: 70px;
+}
+
+.body-container {
+    margin-bottom: 70px;
+    float: left;
+}
+
+/*Header section*/
+
+.header-heading h1 {
+    font-family: "Comic Sans MS";
+    font-size: 40px;
+}
+
+
+
+.navigation {
+    display: inline-block;
+}
+
+.navigation a {
+    margin: 0 20px;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    font-family: 'Minion Cyrillic Bold', arial;
+}
+
+.navigation a:hover {
+    border-bottom: 3px solid #C9C699;
+}
+
+.header-container {
+    float: left;
+    margin-bottom: 70px;
+    width: 100%;
+}
+
+/*body sections*/
+
+.home-container {
+    width: 100%;
+    float: left;
+    font-family: 'Minion Cyrillic Bold', arial;
+}
+
+.home-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.home-content h2 {
+    font-size: 35px;
+}
+
+.home-content p {
+    font-size: 20px;
+}
+
+.recipe-container {
+    width: 100%;
+    float: left;
+}
+
+.recipe-navigation {
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.add-button {
+    width: 115px;
+    height: 37px;
+    background-color: rgb(91,183,91);
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+}
+
+.sort-button {
+    background-color: rgb(85,85,85);
+    width: 75px;
+    height: 37px;
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+}
+
+/*footer section*/
+.footer-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 140px;
+}
+
+.footer-content {
+    margin-top: 60px;
+    font-family: 'Minion Cyrillic Bold', arial;
+}
+
+.footer-content span {
+    
+    display: block;
+}

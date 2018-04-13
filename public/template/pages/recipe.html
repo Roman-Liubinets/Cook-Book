@@ -1,15 +1,13 @@
 <div ng-show="recipe">
-    <div class="container">
-        <div class="recipe-container">
-            <div class="recipe-navigation">
-                <input type="button" value="Add new recipe" ng-click="newRecipeFunc()">
-                <input type="button" value="Sort">
-            </div>
-            <div class="recipe-content">
-                <img src="" width="100%" height="170" />
-                <div class="recipe-name">
-                    <a href="#" ng-click="showRecipe()">Ultimate Chocolate Chip Cookies</a>
-                </div>
+    <div class="recipe-container">
+        <div class="recipe-navigation">
+            <input class="add-button" type="button" value="Add new recipe" ng-click="newRecipeFunc()">
+            <input class="sort-button" type="button" value="Sort">
+        </div>
+        <div class="recipe-content">
+            <img src="" width="100%" height="170" />
+            <div class="recipe-name">
+                <a href="#" ng-click="showRecipe()">Ultimate Chocolate Chip Cookies</a>
             </div>
         </div>
     </div>
