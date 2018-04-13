@@ -30,6 +30,7 @@ app.directive("headerBlock", function () {
             $scope.recipe = false;
             $scope.newRecipe = false;
             $scope.recipePage = false;
+            $scope.modifyRecipe = false;
 
             $scope.menuNavigation = [{
                 name: "Home",
@@ -38,6 +39,7 @@ app.directive("headerBlock", function () {
                     $scope.recipe = false;
                     $scope.newRecipe = false;
                     $scope.recipePage = false;
+                    $scope.modifyRecipe = false;
                 }
           }, {
                 name: "Recipe Book",
@@ -46,6 +48,7 @@ app.directive("headerBlock", function () {
                     $scope.recipe = true;
                     $scope.newRecipe = false;
                     $scope.recipePage = false;
+                    $scope.modifyRecipe = false;
                 }
           }]
         }
@@ -88,6 +91,7 @@ app.directive("recipeBlock", function () {
                 $scope.newRecipe = false;
                 $scope.home = false;
                 $scope.recipe = false;
+                $scope.modifyRecipe = false;
             }
         }
     }
@@ -104,6 +108,7 @@ app.directive("newrecipeBlock", function () {
                 $scope.home = false;
                 $scope.recipe = false;
                 $scope.recipePage = false;
+                $scope.modifyRecipe = false;
             }
 
             $scope.ingrdArray = [];
@@ -128,6 +133,24 @@ app.directive("recipecontenBlock", function () {
                 $scope.newRecipe = false;
                 $scope.home = false;
                 $scope.recipe = true;
+                $scope.modifyRecipe = false;
+            } 
+        }
+    }
+});
+
+app.directive("recipemodifyBlock", function () {
+    return {
+        replace: true,
+        templateUrl: "template/pages/modifyRecipe.html",
+        controller: function ($scope, $http) {
+            
+            $scope.modifyRcp = function() {
+                $scope.modifyRecipe = true;
+                $scope.recipePage = false;
+                $scope.newRecipe = false;
+                $scope.home = false;
+                $scope.recipe = false;
             } 
         }
     }
