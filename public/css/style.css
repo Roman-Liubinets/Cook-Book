@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    width: 900px;
+    width: 700px;
     margin: 0 auto;
     padding: 0 10px;
     min-height: 70px;
@@ -162,8 +162,14 @@ body {
 /*add new recipe*/
 
 .newRecipe-container {
-    width: 100%;
-    float: left;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: gray;
+    display: block;
+}
+
+.newRecipe-block {
 }
 
 .newRecipe-heading {
@@ -171,18 +177,17 @@ body {
 }
 
 .newRecipe-heading h2 {
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Minion Cyrillic Bold', arial;
 }
 
 .newRecipe-data {
     width: 100%;
     float: left;
-    margin-left: 150px;
 }
 
 .newRecipe-block {
-    width: 440px;     
+    width: 550px;     
 }
 
 /*
@@ -196,7 +201,6 @@ body {
 
 .text-inputs-name {
     text-align: right;
-    display: block;
     margin-bottom: 15px;
     width: 250px;
 }
@@ -213,7 +217,8 @@ body {
 
 
 
-.recipeBtn {}
+.recipeBtn {
+}
 
 /*footer section*/
 
