@@ -18,6 +18,12 @@ body {
     float: left;
 }
 
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /*Header section*/
 
 .header-heading h1 {
@@ -52,6 +58,8 @@ body {
 
 /*body sections*/
 
+/*home page*/
+
 .home-container {
     width: 100%;
     float: left;
@@ -72,20 +80,24 @@ body {
     font-size: 20px;
 }
 
+/*receip page*/
+
 .recipe-container {
     width: 100%;
     float: left;
 }
 
+/*receip navigation*/
+
 .recipe-navigation {
     width: 100%;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 .add-button {
     width: 115px;
     height: 37px;
-    background-color: rgb(91,183,91);
+    background-color: rgb(91, 183, 91);
     border: 0px solid black;
     font-weight: bold;
     color: white;
@@ -98,7 +110,7 @@ body {
 }
 
 .sort-button {
-    background-color: rgb(85,85,85);
+    background-color: rgb(85, 85, 85);
     width: 75px;
     height: 37px;
     border: 0px solid black;
@@ -111,14 +123,51 @@ body {
     background-color: #969696;
 }
 
+/*receip content*/
+
+.recipe-content {
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    box-shadow: 0 5px 32px 2px rgba(0, 0, 0, .17);
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsla(0, 0%, 90%, .97);
+    background-color: #fff;
+    margin-top: 28px;
+    /*margin-bottom: 18px;*/
+    padding-bottom: 15px;
+    margin-right: 25px;
+}
+
+.recipe-content img {
+    width: 100%;
+    height: 150px;
+}
+
+.recipe-name {
+    max-height: 36px;
+    min-height: 36px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.recipe-name a {
+    text-decoration: none;
+}
+
 /*footer section*/
+
 .footer-container {
     position: fixed;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
     height: 140px;
+    text-align: center;
 }
 
 .footer-content {
@@ -127,6 +176,5 @@ body {
 }
 
 .footer-content span {
-    
     display: block;
 }
