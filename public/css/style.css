@@ -296,12 +296,17 @@ body {
     background-color: gray;
 }
 
+.recipePage-heading {
+    padding-left: 15px;
+}
+
 .recipePage-heading h2 {
     margin-top: 0px;
     margin-bottom: 15px;
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 40px;
     line-height: 42px;
+    padding-left: 
 }
 
 .recipePage-heading span {
@@ -310,32 +315,36 @@ body {
 }
 
 .recipePage-image {
-    width: 450px;
+    width: 445px;
     float: left;
 }
 
 .recipePage-image img {
     max-width: 100%;
     margin: 0 auto;
+    
+    padding-left: 15px;
 }
 
 
 .recipePage-Ingr {
-    width: 300px;
+    width: 270px;
     float: right;
     font-size: 18px;
+    padding-left: 30px;
 }
 
 .recipePage-steps {
     float: right;
-    width: 285px;
+    width: 270px;
     font-size: 18px;
-    padding-left: 15px;
+    padding-left: 30px;
 }
 
 .recipePage-nav {
-    width: 300px;
+    width: 270px;
     float: right;
+    padding-left: 30px;
 }
 
 .btn {
@@ -360,6 +369,7 @@ body {
 
 .recipePage-content {
     margin-bottom: 35px;
+    margin-top: 15px;
     float: left;
     width: 100%;
 }
