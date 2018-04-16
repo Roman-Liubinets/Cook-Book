@@ -193,11 +193,6 @@ body {
 
 }
 
-.newRecipe-data {
-    width: 100%;
-    float: left;
-}
-
 .newRecipe-inputs {
     width: 350px;
     margin: 0 auto;
@@ -368,6 +363,79 @@ body {
     float: left;
     width: 100%;
 }
+
+/*modify recipe*/
+
+.modifyRecipe-container {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+}
+
+.modifyRecipe-block {
+    width: 500px;
+    margin: 0 auto;
+    border: 2px solid #33ccff;
+    border-radius: 15px;
+}
+
+.modifyRecipe-heading {
+    width: 350px;
+    margin: 0 auto;
+    font-weight: 200;
+    margin-top: 75px;
+    text-align: center;
+    font-size: 40px;
+    font-size: 2.5rem;
+    letter-spacing: 0px;
+    letter-spacing: 0.05rem;
+}
+
+.modifyRecipe-heading h2 {
+    font-size: 35px;
+    font-family: "Comic Sans MS";
+}
+
+.modifyRecipe-inputs {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.modifyRecipe-Ingrd {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.modifyRecipe-Steps {
+    width: 350px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.modifyRecipe-Steps textarea {
+    width: 100%;
+    padding: 15px 5px;
+    margin-left: 10px;
+    margin-top: 20px;
+    border: none;
+    text-align: left;
+    color: #757575;
+}
+
+.modifyRecipe-btn input {
+    width: 115px;
+    height: 46px;
+    background-color: rgb(91, 183, 91);
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+    margin-right: 15px;
+    border-radius: 2px;
+}
+
+
+
 /*footer section*/
 
 .footer-container {

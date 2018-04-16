@@ -5,20 +5,22 @@
                 <div class="modifyRecipe-heading">
                     <h2>Modify Recipe</h2>
                 </div>
-                <div class="modifyRecipe-data">
-                    <label for="recipeName">Recipe Name: <input type="text" id="recipeName"></label>
-                    <label for="recipeIngrd">Ingredients: <input type="text" id="recipeIngrd" ng-model="ingredients"></label>
-                    <input type="button" value="Add" ng-click="addToArray(ingredients)">
-                    <div class="modifyRecipe-Ingrd">
-                        <ul>
-                            <li ng-repeat="n in ingrdArray">{{n}}</li>
-                        </ul>
+                <div class="modifyRecipe-inputs">
+                    <input type="text" placeholder="Recipe Name:" class="newRecipe-text">
+                    <input type="text" placeholder="Ingredients:" ng-model="ingredients" class="newRecipe-text">
+                    <input type="button" value="Add" ng-click="addToArray(ingredients)" class="recipeBtn">
+                </div>
+                <div class="modifyRecipe-Ingrd">
+                    <ul>
+                        <li ng-repeat="n in ingrdArray">{{n}}</li>
+                    </ul>
+                </div>
+                <div class="modifyRecipe-Steps">
+                    <textarea name="steps" cols="30" rows="8"></textarea>
+                    <div class="modifyRecipe-btn">
+                        <input type="button" value="Save recipe">
+                        <input type="button" value="back to recipes" ng-click="backRecipe()" class="backBtn">
                     </div>
-                    <div class="modifyRecipe-Steps">
-                        <label for="description"><textarea name="steps" id="description" cols="30" rows="8"></textarea></label>
-                    </div>
-                    <input type="button" value="Save recipe">
-                    <input type="button" value="back to recipes" ng-click="backRecipe()">
                 </div>
             </div>
         </div>
