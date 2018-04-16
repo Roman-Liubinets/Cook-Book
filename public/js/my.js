@@ -32,6 +32,7 @@ app.directive("headerBlock", function () {
             $scope.recipePage = false;
             $scope.modifyRecipe = false;
             $scope.historyPage = false;
+            $scope.showSlider = true;
 
             $scope.menuNavigation = [{
                 name: "Home",
@@ -176,6 +177,15 @@ app.directive("historyBlock", function () {
                 $scope.recipe = false;
                 $scope.historyPage = true;
             }
+        }
+    }
+});
+
+app.directive("sliderBlock", function () {
+    return {
+        replace: true,
+        templateUrl: "template/slider/sliderBlock.html",
+        controller: function ($scope, $http) {
         }
     }
 });
