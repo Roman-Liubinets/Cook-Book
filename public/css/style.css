@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    width: 700px;
+    width: 750px;
     margin: 0 auto;
     padding: 0 10px;
     min-height: 70px;
@@ -289,9 +289,85 @@ body {
 }
 
 .backBtn {
-    background-color: red !important; 
+    background-color: red !important;
 }
 
+/*recipe description*/
+
+.recipePage-container {
+    width: 100%;
+    float: left;
+
+    background-color: gray;
+}
+
+.recipePage-heading h2 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 40px;
+    line-height: 42px;
+}
+
+.recipePage-heading span {
+    color: #aba9ae;
+    font-size: 18px;
+}
+
+.recipePage-image {
+    width: 450px;
+    float: left;
+}
+
+.recipePage-image img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.recipePage-Ingr {
+    width: 300px;
+    float: right;
+    font-size: 18px;
+}
+
+.recipePage-steps {
+    float: right;
+    width: 285px;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.recipePage-nav {
+    width: 300px;
+    float: right;
+}
+
+.btn {
+    width: 115px;
+    height: 46px;
+    background-color: rgb(91, 183, 91);
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+    border-radius: 2px;
+    margin: 10px;
+}
+
+.prv {
+    background-color: skyblue;
+    width: 130px;
+}
+
+.bck {
+    background-color: red;
+}
+
+.recipePage-content {
+    margin-bottom: 35px;
+    float: left;
+    width: 100%;
+}
 /*footer section*/
 
 .footer-container {
