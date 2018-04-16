@@ -1,27 +1,26 @@
 <div ng-show="newRecipe">
     <div class="newRecipe-container">
-        <div class="newRecipe-heading">
-            <h2>Add Recipe</h2>
-        </div>
-            <div class="newRecipe-block">
-                <div class="newRecipe-inputs">
-                    <span>Recipe Name:</span>
-                    <input type="text" class="text-inputs-name">
-                    <span>Ingredients:</span>
-                    <input type="text" ng-model="ingredients" class="text-inputs-ingrd">
-                    <input type="button" value="Add" ng-click="addToArray(ingredients)" class="recipeBtn">
-                </div>
-
-                <div class="newRecipe-Ingrd">
-                    <ul>
-                        <li ng-repeat="n in ingrdArray">{{n}}</li>
-                    </ul>
-                </div>
-                <div class="newRecipe-Steps">
-                    <label for="description"><textarea name="steps" id="description" cols="30" rows="8"></textarea></label>
-                </div>
-                <input type="button" value="Save recipe">
-                <input type="button" value="back to recipes" ng-click="backRecipe()">
+        <div class="newRecipe-block">
+            <div class="newRecipe-heading">
+                <h2>Add Recipe</h2>
             </div>
+            <div class="newRecipe-inputs">
+                <input type="text" class="newRecipe-text" placeholder="Recipe Name:">
+                <input type="text" ng-model="ingredients" class="newRecipe-text" placeholder="Ingredients:">
+                <input type="button" value="Add" ng-click="addToArray(ingredients)" class="recipeBtn">
+            </div>
+            <div class="newRecipe-Ingrd">
+                <ul>
+                    <li ng-repeat="n in ingrdArray">{{n}}</li>
+                </ul>
+            </div>
+            <div class="newRecipe-Steps">
+                <textarea name="steps" id="description" cols="30" rows="8"></textarea>
+                <div class="newRecipe-btn">
+                    <input type="button" value="Save recipe">
+                    <input type="button" value="Back to recipes" ng-click="backRecipe()" class="backBtn">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
