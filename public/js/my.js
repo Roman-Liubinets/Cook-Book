@@ -67,13 +67,13 @@ app.directive("bodyBlock", function () {
     }
 });
 
-app.directive("footerBlock", function () {
-    return {
-        replace: true,
-        templateUrl: "template/footer.html",
-        controller: function ($scope, $http) {}
-    }
-});
+//app.directive("footerBlock", function () {
+//    return {
+//        replace: true,
+//        templateUrl: "template/footer.html",
+//        controller: function ($scope, $http) {}
+//    }
+//});
 
 //Директиви для сторінок з контентом
 

@@ -1,13 +1,16 @@
 <div ng-show="recipe">
     <div class="recipe-container">
-        <div class="recipe-navigation">
+        <div class="recipe-navigation clearfix">
             <input class="add-button" type="button" value="Add new recipe" ng-click="newRecipeFunc()">
             <input class="sort-button" type="button" value="Sort">
         </div>
-        <div class="recipe-content">
+        <div class="recipe-content clearfix">
             <img src="img/1.jpg" />
             <div class="recipe-name">
                 <a href="#" ng-click="showRecipe()">Ultimate Chocolate Chip Cookies</a>
+            </div>
+            <div class="recipe-date">
+                <span>date/time</span>
             </div>
         </div>
     </div>
