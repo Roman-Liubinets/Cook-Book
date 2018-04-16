@@ -31,7 +31,14 @@ body {
     font-size: 40px;
 }
 
+.header-heading {
+    display: inline-block;
+    margin-right: 70px;
+}
 
+.header-navigation {
+    display: inline-block;
+}
 
 .navigation {
     display: inline-block;
@@ -41,19 +48,26 @@ body {
     margin: 0 20px;
     font-size: 25px;
     text-decoration: none;
-    font-weight: 500;
-    color: black;
+    font-weight: 700;
+    color: white;
     font-family: 'Minion Cyrillic Bold', arial;
+    text-transform: uppercase;
 }
 
 .navigation a:hover {
-    border-bottom: 3px solid #C9C699;
+    border-bottom: 3px solid white;
 }
 
 .header-container {
     float: left;
     margin-bottom: 70px;
     width: 100%;
+    height: 110px;
+    background-color: black;
+}
+
+.header-content {
+    color: white;
 }
 
 /*body sections*/
@@ -306,7 +320,7 @@ body {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 40px;
     line-height: 42px;
-    padding-left: 
+    padding-left:
 }
 
 .recipePage-heading span {
@@ -322,7 +336,7 @@ body {
 .recipePage-image img {
     max-width: 100%;
     margin: 0 auto;
-    
+
     padding-left: 15px;
 }
 
@@ -442,6 +456,93 @@ body {
     color: white;
     margin-right: 15px;
     border-radius: 2px;
+}
+
+/*history page*/
+
+.historyPage-container {
+    width: 100%;
+    float: left;
+
+    background-color: gray;
+}
+
+.historyPage-heading {
+    padding-left: 15px;
+}
+
+.historyPage-heading h2 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 40px;
+    line-height: 42px;
+    padding-left:
+}
+
+.historyPage-heading span {
+    color: #aba9ae;
+    font-size: 18px;
+}
+
+.historyPage-image {
+    width: 445px;
+    float: left;
+}
+
+.historyPage-image img {
+    max-width: 100%;
+    margin: 0 auto;
+
+    padding-left: 15px;
+}
+
+
+.historyPage-Ingr {
+    width: 270px;
+    float: right;
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+.historyPage-steps {
+    float: right;
+    width: 270px;
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+.historyPage-nav {
+    width: 270px;
+    float: right;
+    padding-left: 30px;
+}
+
+.btn {
+    width: 115px;
+    height: 46px;
+    background-color: rgb(91, 183, 91);
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+    border-radius: 2px;
+    margin: 10px;
+}
+
+.prv {
+    background-color: skyblue;
+    width: 130px;
+}
+
+.bck {
+    background-color: red;
+}
+
+.historyPage-content {
+    margin-bottom: 35px;
+    margin-top: 15px;
+    float: left;
+    width: 100%;
 }
 
 

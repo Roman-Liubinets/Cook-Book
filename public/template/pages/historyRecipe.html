@@ -1,27 +1,26 @@
-<div ng-show="recipePage">
+<div ng-show="historyPage">
     <div class="container">
-        <div class="recipePage-container">
-            <div class="recipePage-heading">
+        <div class="historyPage-container">
+            <div class="historyPage-heading">
+                <h3>Previous recipe versions</h3>
                 <h2>Heading</h2>
                 <span>time of creation</span>
             </div>
-            <div class="recipePage-content">
-                <div class="recipePage-image">
+            <div class="historyPage-content">
+                <div class="historyPage-image">
                     <img src="img/2.jpg" />
                 </div>
-                <div class="recipePage-Ingr">
+                <div class="historyPage-Ingr">
                     <ul>
                         <li>first</li>
                         <li>second</li>
                         <li>third</li>
                     </ul>
                 </div>
-                <div class="recipePage-steps">
+                <div class="historyPage-steps">
                     <p>In medium microwavable bowl, microwave chocolate chips and whipping cream uncovered on High 1 minute; stir. Microwave 30 seconds; stir until smooth. Carefully spread mixture on top of pudding layer. Refrigerate about 4 hours or until cooled completely.</p>
                 </div>
-                <div class="recipePage-nav">
-                    <input type="button" value="Modify recipe" ng-click="modifyRcp()" class="btn modf">
-                    <input type="button" value="Previous versions" ng-click="historyRcp()" class="btn prv">
+                <div class="historyPage-nav">
                     <input type="button" value="Back to recipes" ng-click="backRecipe()" class="btn bck">
                 </div>
             </div>

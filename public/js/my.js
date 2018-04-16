@@ -31,6 +31,7 @@ app.directive("headerBlock", function () {
             $scope.newRecipe = false;
             $scope.recipePage = false;
             $scope.modifyRecipe = false;
+            $scope.historyPage = false;
 
             $scope.menuNavigation = [{
                 name: "Home",
@@ -40,6 +41,7 @@ app.directive("headerBlock", function () {
                     $scope.newRecipe = false;
                     $scope.recipePage = false;
                     $scope.modifyRecipe = false;
+                    $scope.historyPage = false;
                 }
           }, {
                 name: "Recipe Book",
@@ -49,6 +51,7 @@ app.directive("headerBlock", function () {
                     $scope.newRecipe = false;
                     $scope.recipePage = false;
                     $scope.modifyRecipe = false;
+                    $scope.historyPage = false;
                 }
           }]
         }
@@ -92,6 +95,7 @@ app.directive("recipeBlock", function () {
                 $scope.home = false;
                 $scope.recipe = false;
                 $scope.modifyRecipe = false;
+                $scope.historyPage = false;
             }
         }
     }
@@ -109,6 +113,7 @@ app.directive("newrecipeBlock", function () {
                 $scope.recipe = false;
                 $scope.recipePage = false;
                 $scope.modifyRecipe = false;
+                $scope.historyPage = false;
             }
 
             $scope.ingrdArray = [];
@@ -134,6 +139,7 @@ app.directive("recipecontenBlock", function () {
                 $scope.home = false;
                 $scope.recipe = true;
                 $scope.modifyRecipe = false;
+                $scope.historyPage = false;
             }
         }
     }
@@ -151,6 +157,24 @@ app.directive("recipemodifyBlock", function () {
                 $scope.newRecipe = false;
                 $scope.home = false;
                 $scope.recipe = false;
+                $scope.historyPage = false;
+            }
+        }
+    }
+});
+
+app.directive("historyBlock", function () {
+    return {
+        replace: true,
+        templateUrl: "template/pages/historyRecipe.html",
+        controller: function ($scope, $http) {
+            $scope.historyRcp = function () {
+                $scope.modifyRecipe = false;
+                $scope.recipePage = false;
+                $scope.newRecipe = false;
+                $scope.home = false;
+                $scope.recipe = false;
+                $scope.historyPage = true;
             }
         }
     }
