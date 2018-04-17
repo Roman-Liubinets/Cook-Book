@@ -94,13 +94,14 @@ app.directive("recipeBlock", function () {
             $scope.recipeArr = [];
 
             //            //Кнопка "Перехід до товару"
-            $scope.showRecipe = function (nameRec, dateCreat, description, indexArr) {
+            $scope.showRecipe = function (index, nameRec, dateCreat, description, indexArr) {
                 $scope.recipePage = true;
                 $scope.newRecipe = false;
                 $scope.home = false;
                 $scope.recipe = false;
                 $scope.modifyRecipe = false;
                 $scope.historyPage = false;
+                $scope.indexOfItem = index;
 
                 //Отримати опис товарів при загрузці сторінки товару
                 $http.get('http://localhost:8000/recipe-info')
@@ -108,12 +109,67 @@ app.directive("recipeBlock", function () {
                         $scope.recipeInfoText = response.data;
                         $scope.choosenItemName = nameRec;
                         $scope.choosenItemDate = dateCreat;
-                        $scope.choosenItemDesc = description
-                        $scope.recipeInfoText[indexArr];
+                        $scope.choosenItemDesc = description;
+                        $scope.choosenItemText = $scope.recipeInfoText[indexArr];
+
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
                     });
+
+                $scope.modifyRcp = function () {
+                    $scope.modifyRecipe = true;
+                    $scope.recipePage = false;
+                    $scope.newRecipe = false;
+                    $scope.home = false;
+                    $scope.recipe = false;
+                    $scope.historyPage = false;
+
+                    $scope.newNameOfItem = $scope.choosenItemName;
+                    $scope.newDateOfItem = $scope.choosenItemDate;
+                    $scope.newDescOfItem = $scope.choosenItemDesc;
+                    $scope.newInfoOfItem = $scope.choosenItemText;
+                };
+
+                $scope.changeRecipeEdit = function () {
+
+                    $scope.recipeInfoText[indexArr] = $scope.newInfoOfItem;
+
+
+                    var objEdit = {
+                        name: $scope.newNameOfItem,
+                        description: $scope.newDescOfItem,
+                        creationDate: $scope.newDateOfItem
+                    }
+
+
+                    $http.post('http://localhost:8000/recipe-edit/' + $scope.indexOfItem, objEdit)
+                        .then(function successCallback() {
+                            console.log("Edited");
+                        }, function errorCallback(response) {
+                            console.log("Error!!!" + response.err);
+                        });
+                    $http.get('http://localhost:8000/recipe')
+                        .then(function successCallback(response) {
+                            $scope.recipeArr = response.data;
+                            $scope.choosenItemName = $scope.newNameOfItem;
+                            $scope.choosenItemDate = $scope.newDateOfItem;
+                            $scope.choosenItemDesc = $scope.newDescOfItem;
+                            $scope.modifyRecipe = false;
+                        }, function errorCallback(response) {
+                            console.log("Error!!!" + response.err);
+                        });
+
+                }
             };
+
+            //Отримання рецептів
+            $http.get('http://localhost:8000/recipe')
+                .then(function successCallback(response) {
+                    $scope.recipeArr = response.data;
+                }, function errorCallback(response) {
+                    console.log("Error!!!" + response.err);
+                });
+
 
             $scope.newRecipeFunc = function () {
                 $scope.newRecipe = true;
@@ -123,13 +179,7 @@ app.directive("recipeBlock", function () {
                 $scope.modifyRecipe = false;
                 $scope.historyPage = false;
             }
-            //Отримання рецептів
-            $http.get('http://localhost:8000/recipe')
-                .then(function successCallback(response) {
-                    $scope.recipeArr = response.data;
-                }, function errorCallback(response) {
-                    console.log("Error!!!" + response.err);
-                });
+
         }
     }
 });
@@ -200,14 +250,14 @@ app.directive("recipemodifyBlock", function () {
         templateUrl: "template/pages/modifyRecipe.html",
         controller: function ($scope, $http) {
 
-            $scope.modifyRcp = function () {
-                $scope.modifyRecipe = true;
-                $scope.recipePage = false;
-                $scope.newRecipe = false;
-                $scope.home = false;
-                $scope.recipe = false;
-                $scope.historyPage = false;
-            }
+            //                        $scope.modifyRcp = function () {
+            //                            $scope.modifyRecipe = true;
+            //                            $scope.recipePage = false;
+            //                            $scope.newRecipe = false;
+            //                            $scope.home = false;
+            //                            $scope.recipe = false;
+            //                            $scope.historyPage = false;
+            //                        }
         }
     }
 });

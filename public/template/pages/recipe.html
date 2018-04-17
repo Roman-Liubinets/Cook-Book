@@ -7,7 +7,7 @@
         <div class="recipe-content clearfix" ng-repeat="item in recipeArr | filter: sortTovars track by $index">
             <img src="img/1.jpg" />
             <div class="recipe-name">
-                <a href="#" ng-click="showRecipe(item.name, item.creationDate, item.description, $index)">{{item.name}}</a>
+                <a href="#" ng-click="showRecipe(item.id, item.name, item.creationDate, item.description, $index)">{{item.name}}</a>
             </div>
             <div class="recipe-date">
                 <span>{{item.creationDate}}</span>
