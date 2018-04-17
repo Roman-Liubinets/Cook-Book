@@ -121,7 +121,7 @@ app.directive("newrecipeBlock", function () {
 
             $scope.addToArray = function (ingr) {
                 $scope.ingrdArray.push(ingr);
-                $scope.ingredients = "";
+                $scope.newIngredients = "";
                 console.log($scope.ingrdArray);
                 //                $scope.currentDate = new Date();
             }

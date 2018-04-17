@@ -15,6 +15,13 @@ app.use(bodyParser.urlencoded({
     'extended': 'true'
 }));
 
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'cookbook'
+});
+
 
 
 //Усі адреси контролюються клієнтським ангуляром
