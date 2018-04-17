@@ -93,14 +93,27 @@ app.directive("recipeBlock", function () {
 
             $scope.recipeArr = [];
 
-            $scope.showRecipe = function () {
+            //            //Кнопка "Перехід до товару"
+            $scope.showRecipe = function (nameRec, dateCreat, description, indexArr) {
                 $scope.recipePage = true;
                 $scope.newRecipe = false;
                 $scope.home = false;
                 $scope.recipe = false;
                 $scope.modifyRecipe = false;
                 $scope.historyPage = false;
-            }
+
+                //Отримати опис товарів при загрузці сторінки товару
+                $http.get('http://localhost:8000/recipe-info')
+                    .then(function successCallback(response) {
+                        $scope.recipeInfoText = response.data;
+                        $scope.choosenItemName = nameRec;
+                        $scope.choosenItemDate = dateCreat;
+                        $scope.choosenItemDesc = description
+                        $scope.recipeInfoText[indexArr];
+                    }, function errorCallback(response) {
+                        console.log("Error!!!" + response.err);
+                    });
+            };
 
             $scope.newRecipeFunc = function () {
                 $scope.newRecipe = true;
@@ -110,7 +123,7 @@ app.directive("recipeBlock", function () {
                 $scope.modifyRecipe = false;
                 $scope.historyPage = false;
             }
-            
+            //Отримання рецептів
             $http.get('http://localhost:8000/recipe')
                 .then(function successCallback(response) {
                     $scope.recipeArr = response.data;
@@ -126,7 +139,7 @@ app.directive("newrecipeBlock", function () {
         replace: true,
         templateUrl: "template/pages/newRecipe.html",
         controller: function ($scope, $http) {
-
+            //Добавити рецепт в БД
             $scope.addRecipe = function () {
                 $scope.currentDate = new Date();
                 let recipeObj = {
@@ -148,7 +161,7 @@ app.directive("newrecipeBlock", function () {
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
                     });
-                
+
                 console.log($scope.recipeArr);
             }
 
@@ -168,6 +181,7 @@ app.directive("recipecontenBlock", function () {
         replace: true,
         templateUrl: "template/pages/recipePage.html",
         controller: function ($scope, $http) {
+
             $scope.backRecipe = function () {
                 $scope.recipePage = false;
                 $scope.newRecipe = false;

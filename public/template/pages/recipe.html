@@ -4,10 +4,10 @@
             <input class="add-button" type="button" value="Add new recipe" ng-click="newRecipeFunc()">
             <input class="sort-button" type="button" value="Sort">
         </div>
-        <div class="recipe-content clearfix" ng-repeat="item in recipeArr">
+        <div class="recipe-content clearfix" ng-repeat="item in recipeArr | filter: sortTovars track by $index">
             <img src="img/1.jpg" />
             <div class="recipe-name">
-                <a href="#" ng-click="showRecipe()">{{item.name}}</a>
+                <a href="#" ng-click="showRecipe(item.name, item.creationDate, item.description, $index)">{{item.name}}</a>
             </div>
             <div class="recipe-date">
                 <span>{{item.creationDate}}</span>

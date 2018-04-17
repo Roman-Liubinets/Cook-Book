@@ -40,6 +40,13 @@ app.get('/recipe', function (req, res) {
     });
 });
 
+//Запис/читання опису товару у текстовий файл
+//Читання
+app.get('/items-info', function (req, res) {
+    var str = new ItemsInfo().readInfo().toString().split('/item/');
+    res.status(200).send(str);
+});
+
 
 
 
