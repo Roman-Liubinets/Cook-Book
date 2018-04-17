@@ -181,6 +181,7 @@ body {
 
 .recipe-name a {
     text-decoration: none;
+    color: black;
 }
 
 .recipe-date {
@@ -287,7 +288,6 @@ body {
     border: 0px solid black;
     font-weight: bold;
     color: white;
-    margin-right: 15px;
     border-radius: 2px;
 }
 
@@ -295,7 +295,7 @@ body {
     padding: 15px 5px;
     margin-left: 10px;
     margin-top: 5px;
-    width: 260px;
+    width: 305px;
     border: none;
     text-align: left;
     color: #757575;
@@ -308,8 +308,8 @@ body {
 
 .newRecipe-btn {
     width: 350px;
-    margin: 0 auto;
     margin-bottom: 40px;
+    margin-left: 22px;
 }
 
 .newRecipe-btn input {
@@ -328,12 +328,16 @@ body {
     background-color: red !important;
 }
 
+.recipeName {
+    width: 305px;
+}
+
 /*recipe description*/
 
 .recipePage-container {
     width: 100%;
     float: left;
-    background-color: gray;
+    background-color: white;
 }
 
 .recipePage-heading {
@@ -374,11 +378,19 @@ body {
     padding-left: 30px;
 }
 
+.recipePage-Ingr span {
+    font-weight: bold;
+}
+
 .recipePage-steps {
     float: right;
     width: 270px;
     font-size: 18px;
     padding-left: 30px;
+}
+
+.recipePage-steps span {
+    font-weight: bold;
 }
 
 .recipePage-nav {
@@ -388,25 +400,44 @@ body {
 }
 
 .btn {
-    width: 115px;
-    height: 46px;
-    background-color: rgb(91, 183, 91);
+    width: 79px;
+    height: 42px;
     border: 0px solid black;
     font-weight: bold;
-    color: white;
     border-radius: 2px;
     margin: 10px;
+    font-size: 15px;
+    background-color: black;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .prv {
-    background-color: skyblue;
-    width: 130px;
+    float: right;
+    margin-right: 35px;
+}
+.prv:hover {
+    background-color: #6495ED;
 }
 
 .bck {
+    float: right;
+    margin-right: 35px;
+}
+
+.bck:hover {
     background-color: red;
 }
 
+.modf {
+    margin-left: 5px;
+}
+
+.modf:hover {
+    background-color: green;
+}
 .recipePage-content {
     margin-bottom: 35px;
     margin-top: 15px;
@@ -417,26 +448,27 @@ body {
 /*modify recipe*/
 
 .modifyRecipe-container {
-    width: 650px;
+    width: 100%;
+    min-height: 450px;
     margin-left: auto;
     margin-right: auto;
     float: left;
 }
 
 .modifyRecipe-block {
-    width: 500px;
+    width: 400px;
     margin: 0 auto;
-    border: 2px solid #33ccff;
-    border-radius: 15px;
+    background-color: white;
+    border-radius: 5px;
+    font-family: 'Open Sans';
+    color: #444;
+    box-shadow: 0 5px 32px 2px rgba(0, 0, 0, .17);
 }
 
 .modifyRecipe-heading {
     width: 350px;
-    margin: 0 auto;
     font-weight: 200;
-    margin-top: 75px;
-    text-align: center;
-    font-size: 40px;
+    margin: 0 auto;
     font-size: 2.5rem;
     letter-spacing: 0px;
     letter-spacing: 0.05rem;
@@ -444,7 +476,8 @@ body {
 
 .modifyRecipe-heading h2 {
     font-size: 35px;
-    font-family: "Comic Sans MS";
+    padding-left: 15px;
+    padding-top: 10px;
 }
 
 .modifyRecipe-inputs {
@@ -460,17 +493,17 @@ body {
 .modifyRecipe-Steps {
     width: 350px;
     margin: 0 auto;
-    margin-bottom: 40px;
 }
 
 .modifyRecipe-Steps textarea {
-    width: 100%;
     padding: 15px 5px;
     margin-left: 10px;
-    margin-top: 20px;
+    margin-top: 5px;
+    width: 305px;
     border: none;
     text-align: left;
     color: #757575;
+    border: 1px solid gray;
 }
 
 .modifyRecipe-btn input {
@@ -481,7 +514,19 @@ body {
     font-weight: bold;
     color: white;
     margin-right: 15px;
+    margin-left: 15px;
     border-radius: 2px;
+}
+
+.modifyRecipe-btn {
+    width: 350px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    margin-left: 22px;
+}
+
+.modifyRecipe-Steps span {
+    padding: 5px 10px;
 }
 
 /*history page*/
@@ -489,8 +534,7 @@ body {
 .historyPage-container {
     width: 100%;
     float: left;
-
-    background-color: gray;
+    background-color: white;
 }
 
 .historyPage-heading {
@@ -542,26 +586,6 @@ body {
     width: 270px;
     float: right;
     padding-left: 30px;
-}
-
-.btn {
-    width: 115px;
-    height: 46px;
-    background-color: rgb(91, 183, 91);
-    border: 0px solid black;
-    font-weight: bold;
-    color: white;
-    border-radius: 2px;
-    margin: 10px;
-}
-
-.prv {
-    background-color: skyblue;
-    width: 130px;
-}
-
-.bck {
-    background-color: red;
 }
 
 .historyPage-content {

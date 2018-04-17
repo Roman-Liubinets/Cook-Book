@@ -6,7 +6,7 @@
                     <h2>Modify Recipe</h2>
                 </div>
                 <div class="modifyRecipe-inputs">
-                    <input type="text" placeholder="Recipe Name:" class="newRecipe-text">
+                    <input type="text" placeholder="Recipe Name:" class="newRecipe-text recipeName">
                     <input type="text" placeholder="Ingredients:" ng-model="ingredients" class="newRecipe-text">
                     <input type="button" value="Add" ng-click="addToArray(ingredients)" class="recipeBtn">
                 </div>
@@ -16,6 +16,7 @@
                     </ul>
                 </div>
                 <div class="modifyRecipe-Steps">
+                    <span>Description:</span>
                     <textarea name="steps" cols="30" rows="8"></textarea>
                     <div class="modifyRecipe-btn">
                         <input type="button" value="Save recipe">
