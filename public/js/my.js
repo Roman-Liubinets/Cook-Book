@@ -90,6 +90,9 @@ app.directive("recipeBlock", function () {
         replace: true,
         templateUrl: "template/pages/recipe.html",
         controller: function ($scope, $http) {
+
+            $scope.recipeArr = [];
+
             $scope.showRecipe = function () {
                 $scope.recipePage = true;
                 $scope.newRecipe = false;
@@ -98,6 +101,22 @@ app.directive("recipeBlock", function () {
                 $scope.modifyRecipe = false;
                 $scope.historyPage = false;
             }
+
+            $scope.newRecipeFunc = function () {
+                $scope.newRecipe = true;
+                $scope.home = false;
+                $scope.recipe = false;
+                $scope.recipePage = false;
+                $scope.modifyRecipe = false;
+                $scope.historyPage = false;
+            }
+            
+            $http.get('http://localhost:8000/recipe')
+                .then(function successCallback(response) {
+                    $scope.recipeArr = response.data;
+                }, function errorCallback(response) {
+                    console.log("Error!!!" + response.err);
+                });
         }
     }
 });
@@ -108,13 +127,29 @@ app.directive("newrecipeBlock", function () {
         templateUrl: "template/pages/newRecipe.html",
         controller: function ($scope, $http) {
 
-            $scope.newRecipeFunc = function () {
-                $scope.newRecipe = true;
-                $scope.home = false;
-                $scope.recipe = false;
-                $scope.recipePage = false;
-                $scope.modifyRecipe = false;
-                $scope.historyPage = false;
+            $scope.addRecipe = function () {
+                $scope.currentDate = new Date();
+                let recipeObj = {
+                    name: $scope.newRecipeName,
+                    description: $scope.newDescription,
+                    creationDate: $scope.currentDate
+                };
+
+                $http.post('http://localhost:8000/recipe-add', recipeObj)
+                    .then(function successCallback(response) {
+                        $http.get('http://localhost:8000/recipe')
+                            .then(function successCallback(response) {
+                                $scope.recipeArr = response.data;
+                            }, function errorCallback(response) {
+                                console.log("Error!!!" + response.err);
+                            });
+
+
+                    }, function errorCallback(response) {
+                        console.log("Error!!!" + response.err);
+                    });
+                
+                console.log($scope.recipeArr);
             }
 
             $scope.ingrdArray = [];
@@ -123,7 +158,6 @@ app.directive("newrecipeBlock", function () {
                 $scope.ingrdArray.push(ingr);
                 $scope.newIngredients = "";
                 console.log($scope.ingrdArray);
-                //                $scope.currentDate = new Date();
             }
         }
     }
@@ -185,7 +219,6 @@ app.directive("sliderBlock", function () {
     return {
         replace: true,
         templateUrl: "template/slider/sliderBlock.html",
-        controller: function ($scope, $http) {
-        }
+        controller: function ($scope, $http) {}
     }
 });

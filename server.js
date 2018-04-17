@@ -22,6 +22,25 @@ const connection = mysql.createConnection({
     database: 'cookbook'
 });
 
+// добавити рецепт
+app.post('/recipe-add', function (req, res) {
+    connection.query('INSERT INTO recipe SET ?', req.body, function (err, result) {
+        if (err) throw err;
+        console.log('user added to database with id: ' + result.insertId);
+    });
+    res.sendStatus(200);
+});
+
+//отримання товару
+app.get('/recipe', function (req, res) {
+    connection.query('SELECT * FROM recipe', function (err, rows) {
+        if (err) throw err;
+        console.log('get all recipes, length: ' + rows.length);
+        res.status(200).send(rows);
+    });
+});
+
+
 
 
 //Усі адреси контролюються клієнтським ангуляром

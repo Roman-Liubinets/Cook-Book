@@ -4,13 +4,13 @@
             <input class="add-button" type="button" value="Add new recipe" ng-click="newRecipeFunc()">
             <input class="sort-button" type="button" value="Sort">
         </div>
-        <div class="recipe-content clearfix">
+        <div class="recipe-content clearfix" ng-repeat="item in recipeArr">
             <img src="img/1.jpg" />
             <div class="recipe-name">
-                <a href="#" ng-click="showRecipe()">Ultimate Chocolate Chip Cookies</a>
+                <a href="#" ng-click="showRecipe()">{{item.name}}</a>
             </div>
             <div class="recipe-date">
-                <span>date/time</span>
+                <span>{{item.creationDate}}</span>
             </div>
         </div>
     </div>
