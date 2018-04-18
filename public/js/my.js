@@ -150,7 +150,7 @@ app.directive("recipeBlock", function () {
                     if ($scope.statusImgUpload) {
                         var fd = new FormData();
                         if (beforeCountChanges[1] == undefined) {
-                            newAdrrImg = srcRC + "-" + $scope.countChanges
+                            newAdrrImg = srcRC + "-" + $scope.countChanges;
                         } else {
                             $scope.countChanges += Number(beforeCountChanges[1]);
                             newAdrrImg = beforeCountChanges[0] + "-" + $scope.countChanges;
@@ -271,7 +271,8 @@ app.directive("newrecipeBlock", function () {
                 let recipeObj = {
                     name: $scope.newRecipeName,
                     description: $scope.newDescription,
-                    creationDate: $scope.currentDate
+                    creationDate: $scope.currentDate,
+                    src: imgNumberName
                 };
 
                 $http.post('http://localhost:8000/recipe-add', recipeObj)
