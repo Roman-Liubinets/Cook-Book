@@ -60,7 +60,7 @@ app.get('/items-info', function (req, res) {
 });
 //Змінити дані товару в бд
 app.post('/recipe-edit/:id', function (req, res) {
-    connection.query('UPDATE recipe SET name = ?, description = ?, creationDate = ? ,src = ? WHERE id = ?', [req.body.name, req.body.description, req.body.creationDate, req.body.src, req.params.id],
+    connection.query('UPDATE recipe SET name = ?, creationDate = ? ,src = ? WHERE id = ?', [req.body.name, req.body.creationDate, req.body.src, req.params.id],
         function (err) {
             if (err) throw err;
             console.log('recipe update id: ' + req.params.id);

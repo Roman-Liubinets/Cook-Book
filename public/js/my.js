@@ -184,14 +184,12 @@ app.directive("recipeBlock", function () {
                         var objEdit = {
                             name: $scope.newNameOfItem,
                             creationDate: $scope.newDateOfItem,
-                            description: $scope.newDescOfItem,
                             src: newAdrrImg
                         }
                     } else {
                         var objEdit = {
                             name: $scope.newNameOfItem,
                             creationDate: $scope.newDateOfItem,
-                            description: $scope.newDescOfItem,
                             src: srcRC
                         }
                     }
