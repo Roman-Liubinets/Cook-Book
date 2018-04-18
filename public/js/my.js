@@ -116,13 +116,13 @@ app.directive("recipeBlock", function () {
                 $scope.indexOfItem = index;
 
                 //Отримати опис товарів при загрузці сторінки товару
-                $http.get('http://localhost:8000/recipe-info')
+                $http.get('http://localhost:8000/items-info')
                     .then(function successCallback(response) {
-                        $scope.recipeInfoText = response.data;
+                        $scope.itemsInfoText = response.data;
                         $scope.choosenItemName = nameRec;
                         $scope.choosenItemDate = dateCreat;
                         $scope.choosenItemSrc = srcRC;
-                        $scope.choosenItemText = $scope.recipeInfoText[indexArr];
+                        $scope.choosenItemText = $scope.itemsInfoText[indexArr];
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
                     });
@@ -166,7 +166,8 @@ app.directive("recipeBlock", function () {
                                 console.log("Error!!!" + response.err);
                             })
                     }
-                    $scope.recipeInfoText[indexArr] = $scope.newInfoOfItem;
+                    
+                    $scope.itemsInfoText[indexArr] = $scope.newInfoOfItem;
                     //Завантаження опису в текстовий файл
                     //                    let obj = {
                     //                        text: $scope.recipeInfoText.join('/item/')
@@ -240,8 +241,8 @@ app.directive("newrecipeBlock", function () {
         controller: function ($scope, $http) {
             $scope.newRecipeName = "";
             $scope.newDescription = "";
-            
-            
+
+
             //Добавити рецепт в БД
             $scope.addRecipe = function () {
                 //генерація нової назви зображення після завантаження
@@ -266,7 +267,18 @@ app.directive("newrecipeBlock", function () {
                         console.log("Error!!!" + response.err);
                     });
 
+                //Завантаження опису в текстовий файл
+                let obj = {
+                    text: $scope.newDescription
+                };
+                $http.post('http://localhost:8000/items-info', obj)
+                    .then(function successCallback() {
+                        console.log("Text in txt file");
+                    }, function errorCallback(response) {
+                        console.log("Error!!!" + response.err);
+                    });
 
+                //Запис товару в базу даних
                 $scope.currentDate = new Date();
                 let recipeObj = {
                     name: $scope.newRecipeName,
@@ -287,8 +299,22 @@ app.directive("newrecipeBlock", function () {
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
                     });
-
-                console.log($scope.recipeArr);
+                //Запис оновлення опису товару в ткст файл
+                //Оновлення списку товарів
+                $http.get('http://localhost:8000/recipe')
+                    .then(function successCallback(response) {
+                        $scope.recipeArr = response.data;
+                        $scope.newRecipe = false;
+                        $scope.home = true;
+                        $scope.recipe = false;
+                        $scope.recipePage = false;
+                        $scope.modifyRecipe = false;
+                        $scope.historyPage = false;
+                        $scope.newRecipeName = "";
+                        $scope.newDescription = "";
+                    }, function errorCallback(response) {
+                        console.log("Error!!!" + response.err);
+                    });
             }
 
             $scope.ingrdArray = [];

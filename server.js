@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 8000;
 const mysql = require('mysql');
+const fs = require('fs');
 const multer = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -17,6 +18,9 @@ var storage = multer.diskStorage({
 var upload = multer({
     storage: storage
 });
+
+//Підключаємо скрипт читання/запису у текстовий файл
+require('./js/about-item');
 
 
 //Клієнтська частина сайту знаходитиметься у папці public
@@ -58,6 +62,19 @@ app.get('/items-info', function (req, res) {
     var str = new ItemsInfo().readInfo().toString().split('/item/');
     res.status(200).send(str);
 });
+//Запис
+app.post('/items-info', function (req, res) {
+    var str = new ItemsInfo().readInfo().toString();
+    if (str == "") {
+        str = str + req.body.text;
+    } else {
+        str = str + "/item/" + req.body.text;
+    }
+    var str2 = new ItemsInfo().writeInfo(str);
+    res.sendStatus(200);
+});
+
+
 //Змінити дані товару в бд
 app.post('/recipe-edit/:id', function (req, res) {
     connection.query('UPDATE recipe SET name = ?, creationDate = ? ,src = ? WHERE id = ?', [req.body.name, req.body.creationDate, req.body.src, req.params.id],
