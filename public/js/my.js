@@ -105,7 +105,7 @@ app.directive("recipeBlock", function () {
             $scope.recipeArr = [];
 
             //Кнопка "Перехід до товару"
-            $scope.showRecipe = function (index, nameRec, dateCreat, description, srcRC, indexArr) {
+            $scope.showRecipe = function (index, nameRec, dateCreat, srcRC, indexArr) {
                 let beforeCountChanges = srcRC.split("-");
                 $scope.recipePage = true;
                 $scope.newRecipe = false;
@@ -121,7 +121,6 @@ app.directive("recipeBlock", function () {
                         $scope.recipeInfoText = response.data;
                         $scope.choosenItemName = nameRec;
                         $scope.choosenItemDate = dateCreat;
-                        $scope.choosenItemDesc = description;
                         $scope.choosenItemSrc = srcRC;
                         $scope.choosenItemText = $scope.recipeInfoText[indexArr];
                     }, function errorCallback(response) {
@@ -139,7 +138,6 @@ app.directive("recipeBlock", function () {
                     $scope.historyPage = false;
                     $scope.newNameOfItem = $scope.choosenItemName;
                     $scope.newDateOfItem = $scope.choosenItemDate;
-                    $scope.newDescOfItem = $scope.choosenItemDesc;
                     $scope.newInfoOfItem = $scope.choosenItemText;
                     $scope.newItemSrc = $scope.choosenItemSrc;
                 };
@@ -150,7 +148,7 @@ app.directive("recipeBlock", function () {
                     if ($scope.statusImgUpload) {
                         var fd = new FormData();
                         if (beforeCountChanges[1] == undefined) {
-                            newAdrrImg = srcRC + "-" + $scope.countChanges;
+                            newAdrrImg = srcRC + "-" + $scope.countChanges
                         } else {
                             $scope.countChanges += Number(beforeCountChanges[1]);
                             newAdrrImg = beforeCountChanges[0] + "-" + $scope.countChanges;
@@ -270,9 +268,7 @@ app.directive("newrecipeBlock", function () {
                 $scope.currentDate = new Date();
                 let recipeObj = {
                     name: $scope.newRecipeName,
-                    description: $scope.newDescription,
-                    creationDate: $scope.currentDate,
-                    src: imgNumberName
+                    creationDate: $scope.currentDate
                 };
 
                 $http.post('http://localhost:8000/recipe-add', recipeObj)
