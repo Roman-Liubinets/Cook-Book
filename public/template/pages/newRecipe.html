@@ -1,0 +1,32 @@
+<div ng-show="newRecipe">
+    <div class="newRecipe-container">
+        <div class="newRecipe-block">
+            <div class="newRecipe-heading">
+                <h2>Add Recipe</h2>
+            </div>
+            <div class="newRecipe-inputs">
+                <input type="text" class="newRecipe-text recipeName" placeholder="Recipe Name:" ng-model="newRecipeName">
+                <input type="text" ng-model="newIngredients" class="newRecipe-text" placeholder="Ingredients:">
+                <input type="button" value="Add" ng-click="addToArray(ingredients)" class="recipeBtn">
+
+                <label class="uploadbutton">
+            <div class="button">Upload</div>
+            <input type="file" file-model="myFile">
+            </label><br>
+            </div>
+            <div class="newRecipe-Ingrd">
+                <ul>
+                    <li ng-repeat="n in ingrdArray">{{n}}</li>
+                </ul>
+            </div>
+            <div class="newRecipe-Steps">
+                <span>Description:</span>
+                <textarea name="steps" cols="30" rows="8" ng-model="newDescription"></textarea>
+                <div class="newRecipe-btn">
+                    <input type="button" value="Save recipe" ng-click="addRecipe(fileOfNewItem)">
+                    <input type="button" value="Back to recipes" ng-click="backRecipe()" class="backBtn">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

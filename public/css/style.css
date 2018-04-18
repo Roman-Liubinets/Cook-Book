@@ -1,0 +1,725 @@
+html,
+body {
+    min-width: 1122px;
+    min-height: 550px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 820px;
+    margin: 0 auto;
+    padding: 0 10px;
+    min-height: 70px;
+}
+
+.body-container {
+    margin-bottom: 70px;
+    float: left;
+    width: 100%;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Header section*/
+
+.header-heading h1 {
+    font-family: "Comic Sans MS";
+    font-size: 40px;
+}
+
+.header-heading {
+    display: inline-block;
+    margin-right: 70px;
+}
+
+.header-navigation {
+    display: inline-block;
+}
+
+.navigation {
+    display: inline-block;
+}
+
+.navigation a {
+    margin: 0 20px;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    font-family: 'Minion Cyrillic Bold', arial;
+    text-transform: uppercase;
+}
+
+.navigation a:hover {
+    border-bottom: 3px solid white;
+}
+
+.header-container {
+    float: left;
+    margin-bottom: 70px;
+    width: 100%;
+    height: 110px;
+    background-color: black;
+}
+
+.header-content {
+    color: white;
+}
+
+/*body sections*/
+
+/*home page*/
+
+.home-container {
+    width: 100%;
+    float: left;
+    background: white;
+    border-radius: 5px;
+}
+
+.home-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+    font-family: 'Open Sans';
+    color: #444;
+}
+
+.home-content h2 {
+    font-size: 35px;
+}
+
+.home-content p {
+    font-size: 20px;
+}
+
+/*receip page*/
+
+.recipe-container {
+    width: 100%;
+    float: left;
+    border-radius: 5px;
+}
+
+/*receip navigation*/
+
+.recipe-navigation {
+    width: 100%;
+    margin: 15px 25px;
+}
+
+.add-button {
+    width: 115px;
+    height: 37px;
+    background-color: rgb(91, 183, 91);
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+    float: left;
+    margin-right: 15px;
+}
+
+.add-button:hover {
+    background-color: #9dd9b8;
+}
+
+.sort-button {
+    background-color: rgb(85, 85, 85);
+    width: 75px;
+    height: 37px;
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+    float: left;
+}
+
+.sort-button:hover {
+    background-color: #969696;
+}
+
+/*receip content*/
+
+.recipe-content {
+    display: inline-block;
+    width: 220px;
+    min-height: 220px;
+    box-shadow: 0 5px 32px 2px rgba(0, 0, 0, .17);
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsla(0, 0%, 90%, .97);
+    background-color: #fff;
+    margin: 15px 25px;
+    padding-bottom: 15px;
+    margin-right: 25px;
+    float: left;
+}
+
+.recipe-container {
+
+    background-color: white;
+}
+
+.recipe-content img {
+    width: 100%;
+    height: 150px;
+}
+
+.recipe-name {
+    max-height: 36px;
+    min-height: 36px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 18px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+
+.recipe-name a {
+    text-decoration: none;
+    color: black;
+}
+
+.recipe-date {
+    width: 100%;
+    text-align: right;
+}
+
+.recipe-date span {
+    margin-right: 15px;
+    color: gray;
+}
+
+/*add new recipe*/
+
+.newRecipe-container {
+    width: 100%;
+    min-height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+}
+
+.newRecipe-block {
+    width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+    font-family: 'Open Sans';
+    color: #444;
+    box-shadow: 0 5px 32px 2px rgba(0, 0, 0, .17);
+}
+
+.newRecipe-heading {
+    width: 350px;
+    font-weight: 200;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    letter-spacing: 0px;
+    letter-spacing: 0.05rem;
+}
+
+.newRecipe-heading h2 {
+    font-size: 35px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.newRecipe-inputs {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.recipe-name {
+    display: inline-block;
+}
+
+.newRecipe-Ingrd {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.newRecipe-Steps {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.newRecipe-btn {
+    width: 350px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.newRecipe-text {
+    padding: 15px 5px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 250px;
+    border: none;
+    text-align: left;
+    color: #757575;
+    border: 1px solid gray;
+}
+
+.text-inputs-name {
+    text-align: right;
+    margin-bottom: 15px;
+    width: 250px;
+}
+
+.text-inputs-ingrd {
+    width: 250px;
+}
+
+.newRecipe-inputs span {
+    display: block;
+}
+
+
+.recipeBtn {
+    width: 50px;
+    height: 46px;
+    background-color: rgb(91, 183, 91);
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+    border-radius: 2px;
+}
+
+.newRecipe-Steps textarea {
+    padding: 15px 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 305px;
+    border: none;
+    text-align: left;
+    color: #757575;
+    border: 1px solid gray;
+}
+
+.newRecipe-Steps span {
+    padding: 5px 10px;
+}
+
+.newRecipe-btn {
+    width: 350px;
+    margin-bottom: 40px;
+    margin-left: 22px;
+}
+
+.newRecipe-btn input {
+    width: 115px;
+    height: 46px;
+    background-color: rgb(91, 183, 91);
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 2px;
+}
+
+.backBtn {
+    background-color: red !important;
+}
+
+.recipeName {
+    width: 305px;
+}
+
+/*recipe description*/
+
+.recipePage-container {
+    width: 100%;
+    float: left;
+    background-color: white;
+}
+
+.recipePage-heading {
+    padding-left: 15px;
+}
+
+.recipePage-heading h2 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 40px;
+    line-height: 42px;
+    padding-left:
+}
+
+.recipePage-heading span {
+    color: #aba9ae;
+    font-size: 18px;
+}
+
+.recipePage-image {
+    width: 445px;
+    float: left;
+}
+
+.recipePage-image img {
+    max-width: 100%;
+    margin: 0 auto;
+
+    padding-left: 15px;
+}
+
+
+.recipePage-Ingr {
+    width: 270px;
+    float: right;
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+.recipePage-Ingr span {
+    font-weight: bold;
+}
+
+.recipePage-steps {
+    float: right;
+    width: 270px;
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+.recipePage-steps span {
+    font-weight: bold;
+}
+
+.recipePage-nav {
+    width: 270px;
+    float: right;
+    padding-left: 30px;
+}
+
+.btn {
+    width: 79px;
+    height: 42px;
+    border: 0px solid black;
+    font-weight: bold;
+    border-radius: 2px;
+    margin: 10px;
+    font-size: 15px;
+    background-color: black;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.prv {
+    float: right;
+    margin-right: 35px;
+}
+.prv:hover {
+    background-color: #6495ED;
+}
+
+.bck {
+    float: right;
+    margin-right: 35px;
+}
+
+.bck:hover {
+    background-color: red;
+}
+
+.modf {
+    margin-left: 5px;
+}
+
+.modf:hover {
+    background-color: green;
+}
+.recipePage-content {
+    margin-bottom: 35px;
+    margin-top: 15px;
+    float: left;
+    width: 100%;
+}
+
+/*modify recipe*/
+
+.modifyRecipe-container {
+    width: 100%;
+    min-height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+}
+
+.modifyRecipe-block {
+    width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+    font-family: 'Open Sans';
+    color: #444;
+    box-shadow: 0 5px 32px 2px rgba(0, 0, 0, .17);
+}
+
+.modifyRecipe-heading {
+    width: 350px;
+    font-weight: 200;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    letter-spacing: 0px;
+    letter-spacing: 0.05rem;
+}
+
+.modifyRecipe-heading h2 {
+    font-size: 35px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.modifyRecipe-inputs {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.modifyRecipe-Ingrd {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.modifyRecipe-Steps {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.modifyRecipe-Steps textarea {
+    padding: 15px 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 305px;
+    border: none;
+    text-align: left;
+    color: #757575;
+    border: 1px solid gray;
+}
+
+.modifyRecipe-btn input {
+    width: 115px;
+    height: 46px;
+    background-color: rgb(91, 183, 91);
+    border: 0px solid black;
+    font-weight: bold;
+    color: white;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 2px;
+}
+
+.modifyRecipe-btn {
+    width: 350px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    margin-left: 22px;
+}
+
+.modifyRecipe-Steps span {
+    padding: 5px 10px;
+}
+
+/*history page*/
+
+.historyPage-container {
+    width: 100%;
+    float: left;
+    background-color: white;
+}
+
+.historyPage-heading {
+    padding-left: 15px;
+}
+
+.historyPage-heading h2 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 40px;
+    line-height: 42px;
+    padding-left:
+}
+
+.historyPage-heading span {
+    color: #aba9ae;
+    font-size: 18px;
+}
+
+.historyPage-image {
+    width: 445px;
+    float: left;
+}
+
+.historyPage-image img {
+    max-width: 100%;
+    margin: 0 auto;
+
+    padding-left: 15px;
+}
+
+
+.historyPage-Ingr {
+    width: 270px;
+    float: right;
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+.historyPage-steps {
+    float: right;
+    width: 270px;
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+.historyPage-nav {
+    width: 270px;
+    float: right;
+    padding-left: 30px;
+}
+
+.historyPage-content {
+    margin-bottom: 35px;
+    margin-top: 15px;
+    float: left;
+    width: 100%;
+}
+
+/*slider*/
+
+.body_slides {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: -2;
+    background: #000;
+}
+
+.body_slides,
+.body_slides:after {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 30px;
+    left: 0px;
+}
+
+.body_slides:after {
+    content: '';
+    background: transparent url(images/pattern.png) repeat top left;
+}
+
+
+.body_slides li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: none;
+    opacity: 0;
+    -webkit-animation: anim_slides 30s linear infinite 0s;
+    -moz-animation: anim_slides 30s linear infinite 0s;
+    -o-animation: anim_slides 30s linear infinite 0s;
+    -ms-animation: anim_slides 30s linear infinite 0s;
+    animation: anim_slides 30s linear infinite 0s;
+}
+
+.body_slides li:nth-child(1) {
+    background-image: url(../img/slider/1.jpg)
+}
+
+.body_slides li:nth-child(2) {
+    -webkit-animation-delay: 5.0s;
+    -moz-animation-delay: 5.0s;
+    background-image: url(../img/slider/2.jpg)
+}
+
+.body_slides li:nth-child(3) {
+    -webkit-animation-delay: 10.0s;
+    -moz-animation-delay: 10.0s;
+    background-image: url(../img/slider/3.jpg)
+}
+
+.body_slides li:nth-child(4) {
+    -webkit-animation-delay: 20.0s;
+    -moz-animation-delay: 20.0s;
+    background-image: url(../img/slider/4.jpg)
+}
+
+.body_slides li:nth-child(5) {
+    -webkit-animation-delay: 30.0s;
+    -moz-animation-delay: 30.0s;
+    background-image: url(../img/slider/5.jpg)
+}
+
+@-webkit-keyframes anim_slides {
+    0% {
+        opacity: 0;
+    }
+    6% {
+        opacity: 1;
+    }
+    24% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes anim_slides {
+    0% {
+        opacity: 0;
+    }
+    6% {
+        opacity: 1;
+    }
+    24% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*footer section*/
+
+.footer-container {
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+.footer-content {
+    margin-top: 60px;
+    font-family: 'Minion Cyrillic Bold', arial;
+}
+
+.footer-content span {
+    display: block;
+}

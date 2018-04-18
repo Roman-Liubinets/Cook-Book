@@ -1,0 +1,32 @@
+<div ng-show="recipePage">
+    <div class="container">
+        <div class="recipePage-container">
+            <div class="recipePage-heading">
+                <h2>{{choosenItemName}}</h2>
+                <span>{{choosenItemDate}}</span>
+            </div>
+            <div class="recipePage-content">
+                <div class="recipePage-image">
+                    <img src="img/2.jpg" />
+                </div>
+                <div class="recipePage-Ingr">
+                    <span>Ingredients:</span>
+                    <ul>
+                        <li>first</li>
+                        <li>second</li>
+                        <li>third</li>
+                    </ul>
+                </div>
+                <div class="recipePage-steps">
+                    <span>Steps:</span>
+                    <p>In medium microwavable bowl, microwave chocolate chips and whipping cream uncovered on High 1 minute; stir. Microwave 30 seconds; stir until smooth. Carefully spread mixture on top of pudding layer. Refrigerate about 4 hours or until cooled completely.</p>
+                </div>
+                <div class="recipePage-nav">
+                    <input type="button" value="Modify" ng-click="modifyRcp()" class="btn modf">
+                    <input type="button" value="History" ng-click="historyRcp()" class="btn prv">
+                    <input type="button" value="Back" ng-click="backRecipe()" class="btn bck">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
