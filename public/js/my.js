@@ -240,6 +240,10 @@ app.directive("newrecipeBlock", function () {
         replace: true,
         templateUrl: "template/pages/newRecipe.html",
         controller: function ($scope, $http) {
+            $scope.newRecipeName = "";
+            $scope.newDescription = "";
+            
+            
             //Добавити рецепт в БД
             $scope.addRecipe = function () {
                 //генерація нової назви зображення після завантаження
@@ -268,7 +272,8 @@ app.directive("newrecipeBlock", function () {
                 $scope.currentDate = new Date();
                 let recipeObj = {
                     name: $scope.newRecipeName,
-                    creationDate: $scope.currentDate
+                    creationDate: $scope.currentDate,
+                    src: imgNumberName
                 };
 
                 $http.post('http://localhost:8000/recipe-add', recipeObj)
