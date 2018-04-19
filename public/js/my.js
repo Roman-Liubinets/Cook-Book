@@ -303,32 +303,34 @@ app.directive("newrecipeBlock", function () {
                     });
 
                 //Завантаження опису в текстовий файл
-                let obj = {
-                    text: $scope.newDescription
-                };
-                $http.post('http://localhost:8000/items-info', obj)
-                    .then(function successCallback() {
-                        console.log("Text in txt file");
-                    }, function errorCallback(response) {
-                        console.log("Error!!!" + response.err);
-                    });
-                //Завантаження опису ІНГРЕДІЄНТІВ в текстовий файл
-                let ingrdObj = {
-                    text: $scope.newIngredients
-                };
-                $http.post('http://localhost:8000/ingrd-info', ingrdObj)
-                    .then(function successCallback() {
-                        console.log("Ingrediens Text in txt file");
-                    }, function errorCallback(response) {
-                        console.log("Error!!!" + response.err);
-                    });
+                //                let obj = {
+                //                    text: $scope.newDescription
+                //                };
+                //                $http.post('http://localhost:8000/items-info', obj)
+                //                    .then(function successCallback() {
+                //                        console.log("Text in txt file");
+                //                    }, function errorCallback(response) {
+                //                        console.log("Error!!!" + response.err);
+                //                    });
+                //                //Завантаження опису ІНГРЕДІЄНТІВ в текстовий файл
+                //                let ingrdObj = {
+                //                    text: $scope.newIngredients
+                //                };
+                //                $http.post('http://localhost:8000/ingrd-info', ingrdObj)
+                //                    .then(function successCallback() {
+                //                        console.log("Ingrediens Text in txt file");
+                //                    }, function errorCallback(response) {
+                //                        console.log("Error!!!" + response.err);
+                //                    });
 
-                //Запис товару в базу даних
+                //Запис рецепту в recipe_ingredients базу даних
                 $scope.currentDate = new Date();
                 let recipeObj = {
                     name: $scope.newRecipeName,
                     creationDate: $scope.currentDate,
-                    src: imgNumberName
+                    src: imgNumberName,
+                    recipe_description: $scope.newDescription,
+                    ingredients: $scope.newIngredients
                 };
 
                 $http.post('http://localhost:8000/recipe-add', recipeObj)
@@ -344,6 +346,10 @@ app.directive("newrecipeBlock", function () {
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
                     });
+
+
+
+
                 //Запис оновлення опису товару в ткст файл
                 //Оновлення списку товарів
                 $http.get('http://localhost:8000/recipe')

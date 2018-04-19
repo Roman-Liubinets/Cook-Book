@@ -41,7 +41,7 @@ const connection = mysql.createConnection({
 
 // добавити рецепт
 app.post('/recipe-add', function (req, res) {
-    connection.query('INSERT INTO recipe SET ?', req.body, function (err, result) {
+    connection.query('INSERT INTO recipe_ingredients SET ?', req.body, function (err, result) {
         if (err) throw err;
         console.log('user added to database with id: ' + result.insertId);
     });
