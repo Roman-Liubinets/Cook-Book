@@ -21,6 +21,7 @@ var upload = multer({
 
 //Підключаємо скрипт читання/запису у текстовий файл
 require('./js/about-item');
+require('./js/about-ingrd');
 
 
 //Клієнтська частина сайту знаходитиметься у папці public
@@ -73,6 +74,26 @@ app.post('/items-info', function (req, res) {
     var str2 = new ItemsInfo().writeInfo(str);
     res.sendStatus(200);
 });
+
+//Запис/читання опису ІНГРЕДІЄНТІВ у текстовий файл
+//Читання
+app.get('/ingrd-info', function (req, res) {
+    var str3 = new IngrdInfo().readInfo().toString().split('/ingrd/');
+    res.status(200).send(str3);
+});
+//Запис
+app.post('/ingrd-info', function (req, res) {
+    var str3 = new IngrdInfo().readInfo().toString();
+    if (str3 == "") {
+        str3 = str3 + req.body.text;
+    } else {
+        str3 = str3 + "/ingrd/" + req.body.text;
+    }
+    var str4 = new IngrdInfo().writeInfo(str3);
+    res.sendStatus(200);
+});
+
+
 //Зміна опису товару в ткст файлі
 app.put('/items-info', function (req, res) {
     var str = new ItemsInfo().writeInfo(req.body.text);

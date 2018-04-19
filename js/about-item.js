@@ -17,3 +17,4 @@ ItemsInfo.prototype.writeInfo = function (data) {
 
 global.ItemsInfo = ItemsInfo;
 
+

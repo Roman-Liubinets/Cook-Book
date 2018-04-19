@@ -312,6 +312,16 @@ app.directive("newrecipeBlock", function () {
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
                     });
+                //Завантаження опису ІНГРЕДІЄНТІВ в текстовий файл
+                let ingrdObj = {
+                    text: $scope.newIngredients
+                };
+                $http.post('http://localhost:8000/ingrd-info', ingrdObj)
+                    .then(function successCallback() {
+                        console.log("Ingrediens Text in txt file");
+                    }, function errorCallback(response) {
+                        console.log("Error!!!" + response.err);
+                    });
 
                 //Запис товару в базу даних
                 $scope.currentDate = new Date();
@@ -347,6 +357,7 @@ app.directive("newrecipeBlock", function () {
                         $scope.historyPage = false;
                         $scope.newRecipeName = "";
                         $scope.newDescription = "";
+                        $scope.newIngredients = "";
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
                     });
