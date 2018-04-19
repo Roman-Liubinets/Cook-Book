@@ -419,6 +419,7 @@ body {
     float: right;
     margin-right: 35px;
 }
+
 .prv:hover {
     background-color: #6495ED;
 }
@@ -429,7 +430,7 @@ body {
 }
 
 .bck:hover {
-    background-color: red;
+    background-color: #f3ba2b;
 }
 
 .modf {
@@ -439,6 +440,15 @@ body {
 .modf:hover {
     background-color: green;
 }
+
+.dlt {
+    margin-left: 5px;
+}
+
+.dlt:hover {
+    background-color: red;
+}
+
 .recipePage-content {
     margin-bottom: 35px;
     margin-top: 15px;

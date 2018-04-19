@@ -73,8 +73,19 @@ app.post('/items-info', function (req, res) {
     var str2 = new ItemsInfo().writeInfo(str);
     res.sendStatus(200);
 });
-
-
+//Зміна опису товару в ткст файлі
+app.put('/items-info', function (req, res) {
+    var str = new ItemsInfo().writeInfo(req.body.text);
+    res.sendStatus(200);
+});
+//Видали товар
+app.delete('/item/:id', function (req, res) {
+    connection.query('DELETE FROM recipe WHERE id = ?', req.params.id, function (err) {
+        if (err) throw err;
+        console.log('recipe delete id: ' + req.body.id);
+    });
+    res.sendStatus(200);
+});
 //Змінити дані товару в бд
 app.post('/recipe-edit/:id', function (req, res) {
     connection.query('UPDATE recipe SET name = ?, creationDate = ? ,src = ? WHERE id = ?', [req.body.name, req.body.creationDate, req.body.src, req.params.id],

@@ -141,6 +141,36 @@ app.directive("recipeBlock", function () {
                     $scope.newInfoOfItem = $scope.choosenItemText;
                     $scope.newItemSrc = $scope.choosenItemSrc;
                 };
+                $scope.deleteRcp = function () {
+                    $http.delete('http://localhost:8000/item/' + index)
+                        .then(function successCallback() {
+                            console.log("Deleted!");
+                            $scope.itemsInfoText.splice(indexArr, 1);
+                            //Завантаження опису в текстовий файл
+                            let obj = {
+                                text: $scope.itemsInfoText.join('/item/')
+                            };
+                            $http.put('http://localhost:8000/items-info', obj)
+                                .then(function successCallback() {
+                                    console.log("Updated text in txt file");
+                                    //Отримати список товарів при загрузці сайту
+                                    $http.get('http://localhost:8000/recipe')
+                                        .then(function successCallback(response) {
+                                            $scope.recipeArr = response.data;
+                                            $scope.recipe = true;
+                                            $scope.recipePage = false;
+                                            $scope.choosenItemName = "";
+                                            $scope.choosenItemDate = "";
+                                        }, function errorCallback(response) {
+                                            console.log("Error!!!" + response.err);
+                                        });
+                                }, function errorCallback(response) {
+                                    console.log("Error!!!" + response.err);
+                                });
+                        }, function errorCallback(response) {
+                            console.log("Error!!!" + response.err);
+                        })
+                }
 
                 var newAdrrImg = "";
                 $scope.changeItemEdit = function () {
@@ -166,18 +196,18 @@ app.directive("recipeBlock", function () {
                                 console.log("Error!!!" + response.err);
                             })
                     }
-                    
+
                     $scope.itemsInfoText[indexArr] = $scope.newInfoOfItem;
                     //Завантаження опису в текстовий файл
-                    //                    let obj = {
-                    //                        text: $scope.recipeInfoText.join('/item/')
-                    //                    };
-                    //                    $http.put('http://localhost:8000/recipe-info', obj)
-                    //                        .then(function successCallback() {
-                    //                            console.log("Updated text in txt file");
-                    //                        }, function errorCallback(response) {
-                    //                            console.log("Error!!!" + response.err);
-                    //                        });
+                    let obj = {
+                        text: $scope.itemsInfoText.join('/item/')
+                    };
+                    $http.put('http://localhost:8000/items-info', obj)
+                        .then(function successCallback() {
+                            console.log("Updated text in txt file");
+                        }, function errorCallback(response) {
+                            console.log("Error!!!" + response.err);
+                        });
 
 
                     $scope.countChanges += Number(beforeCountChanges[1]);
