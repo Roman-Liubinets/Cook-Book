@@ -166,7 +166,7 @@ body {
 
 .recipe-content img {
     width: 100%;
-    height: 150px;
+    height: 220px;
 }
 
 .recipe-name {
@@ -367,7 +367,7 @@ body {
 .recipePage-image img {
     max-width: 100%;
     margin: 0 auto;
-
+    height: 445px;
     padding-left: 15px;
 }
 
@@ -388,6 +388,7 @@ body {
     width: 270px;
     font-size: 18px;
     padding-left: 30px;
+    min-height: 300px;
 }
 
 .recipePage-steps span {
@@ -395,9 +396,11 @@ body {
 }
 
 .recipePage-nav {
-    width: 270px;
-    float: right;
+    width: 470px;
     padding-left: 30px;
+    float: left;
+    height: 70px;
+    margin-top: 50px;
 }
 
 .btn {
@@ -416,8 +419,7 @@ body {
 }
 
 .prv {
-    float: right;
-    margin-right: 35px;
+    
 }
 
 .prv:hover {
@@ -425,8 +427,7 @@ body {
 }
 
 .bck {
-    float: right;
-    margin-right: 35px;
+    
 }
 
 .bck:hover {
@@ -434,7 +435,6 @@ body {
 }
 
 .modf {
-    margin-left: 5px;
 }
 
 .modf:hover {
@@ -442,20 +442,50 @@ body {
 }
 
 .dlt {
-    margin-left: 5px;
 }
 
 .dlt:hover {
     background-color: red;
 }
 
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+.input-file-container {
+    width: 225px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-file-trigger {
+    display: block;
+    padding: 14px 45px;
+    background: black;
+    color: #fff;
+    transition: all .4s;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 225px;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+}
+
+.input-file:hover + .input-file-trigger,
+.input-file:focus + .input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+    background: #34495E;
+    color: #39D2B4;
 }
 
 .recipePage-content {

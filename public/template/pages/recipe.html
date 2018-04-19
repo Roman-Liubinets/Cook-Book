@@ -10,7 +10,7 @@
                 <a href="#" ng-click="showRecipe(item.id, item.name, item.creationDate, item.src, $index)">{{item.name}}</a>
             </div>
             <div class="recipe-date">
-                <span>{{item.creationDate}}</span>
+                <span>{{item.creationDate | date:'MM/dd/yyyy'}}</span>
             </div>
         </div>
     </div>

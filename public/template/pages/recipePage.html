@@ -3,7 +3,7 @@
         <div class="recipePage-container">
             <div class="recipePage-heading">
                 <h2>{{choosenItemName}}</h2>
-                <span>{{choosenItemDate}}</span>
+                <span>{{choosenItemDate | date:'MM/dd/yyyy'}}</span>
             </div>
             <div class="recipePage-content">
                 <div class="recipePage-image">
@@ -21,7 +21,7 @@
                     <span>Steps:</span>
                     <p>{{choosenItemText}}</p>
                 </div>
-                <div class="recipePage-nav">
+                <div class="recipePage-nav clearfix">
                     <input type="button" value="Modify" ng-click="modifyRcp()" class="btn modf">
                     <input type="button" value="History" ng-click="historyRcp()" class="btn prv">
                     <input type="button" value="Back" ng-click="backRecipe()" class="btn bck">

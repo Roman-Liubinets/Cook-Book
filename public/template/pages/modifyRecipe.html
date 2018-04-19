@@ -9,11 +9,11 @@
                     <input type="text" placeholder="Recipe Name:" class="newRecipe-text recipeName" ng-model="newNameOfItem">
                     <input type="text" placeholder="Ingredients:" ng-model="ingredients" class="newRecipe-text">
                     <input type="button" value="Add" ng-click="addToArray(ingredients)" class="recipeBtn">
-                    <img src="../img/{{newItemSrc}}" width="100px" height="50px">
-                    <label class="uploadbutton" ng-click="changeSatusImgUpload()">
-            <div class="button">Upload</div>
-            <input type="file" file-model="myFile" >
-            </label>
+                    <div class="input-file-container">
+                        <img src="../img/{{newItemSrc}}" width="100px" height="100px">
+                        <label class="input-file-trigger" ng-click="changeSatusImgUpload()">Select a file</label>
+                        <input type="file" file-model="myFile" id="my-file" class="input-file">
+                    </div>
                 </div>
                 <div class="modifyRecipe-Ingrd">
                     <ul>
