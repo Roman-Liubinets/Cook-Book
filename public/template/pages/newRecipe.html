@@ -8,11 +8,11 @@
                 <input type="text" class="newRecipe-text recipeName" placeholder="Recipe Name:" ng-model="newRecipeName">
                 <input type="text" ng-model="newIngredients" class="newRecipe-text" placeholder="Ingredients:">
                 <input type="button" value="Add" ng-click="addToArray(ingredients)" class="recipeBtn">
+                <div>
+                    <input type="file" file-model="myFile" id="file" class="inputfile">
+                    <label for="file">Choose a file</label>
+                </div>
 
-                <label class="uploadbutton">
-            <div class="button">Upload</div>
-            <input type="file" file-model="myFile">
-            </label><br>
             </div>
             <div class="newRecipe-Ingrd">
                 <ul>

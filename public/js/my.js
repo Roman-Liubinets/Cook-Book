@@ -243,7 +243,12 @@ app.directive("recipeBlock", function () {
                                 $scope.choosenItemSrc = srcRC;
                             };
                             $scope.statusImgUpload = false;
-                            $scope.modifyRcp = false;
+                            $scope.newRecipe = false;
+                            $scope.home = false;
+                            $scope.recipe = false;
+                            $scope.recipePage = true;
+                            $scope.modifyRecipe = false;
+                            $scope.historyPage = false;
                         }, function errorCallback(response) {
                             console.log("Error!!!" + response.err);
                         });
@@ -335,8 +340,8 @@ app.directive("newrecipeBlock", function () {
                     .then(function successCallback(response) {
                         $scope.recipeArr = response.data;
                         $scope.newRecipe = false;
-                        $scope.home = true;
-                        $scope.recipe = false;
+                        $scope.home = false;
+                        $scope.recipe = true;
                         $scope.recipePage = false;
                         $scope.modifyRecipe = false;
                         $scope.historyPage = false;
