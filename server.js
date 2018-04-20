@@ -41,18 +41,24 @@ const connection = mysql.createConnection({
 
 // добавити рецепт
 app.post('/recipe-add', function (req, res) {
-    connection.query('INSERT INTO recipe_ingredients SET ?', req.body, function (err, result) {
+    connection.query('INSERT INTO recipes_ingredients SET nameRC = ?, dateCreation = ?, src = ?', [req.body.nameRC, req.body.dateCreation, req.body.src], function (err, result) {
         if (err) throw err;
-        console.log('user added to database with id: ' + result.insertId);
+        console.log('recipes and ingredients added to database with id: ' + result.insertId);
+        connection.query('INSERT INTO ingredients SET ingredients = ?, ingredients_id = ?', [req.body.ingredients, result.insertId],
+            function (err, result2) {
+                if (err) throw err;
+                console.log('ingredients added to database with id: ' + result2.insertId);
+            });
+        res.sendStatus(200);
     });
-    res.sendStatus(200);
 });
 
+
 //отримання товару
-app.get('/recipe', function (req, res) {
-    connection.query('SELECT * FROM recipe', function (err, rows) {
+app.get('/items', function (req, res) {
+    connection.query('SELECT * FROM items', function (err, rows) {
         if (err) throw err;
-        console.log('get all recipes, length: ' + rows.length);
+        console.log('get all itemss, length: ' + rows.length);
         res.status(200).send(rows);
     });
 });

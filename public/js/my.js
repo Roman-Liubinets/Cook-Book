@@ -105,8 +105,8 @@ app.directive("recipeBlock", function () {
             $scope.recipeArr = [];
 
             //Кнопка "Перехід до товару"
-            $scope.showRecipe = function (index, nameRec, dateCreat, srcRC, indexArr) {
-                let beforeCountChanges = srcRC.split("-");
+            $scope.showRecipe = function (index, nameRec, dateCreat, srcRC, ingredientsRC, indexArr) {
+                //                let beforeCountChanges = src.split("-");
                 $scope.recipePage = true;
                 $scope.newRecipe = false;
                 $scope.home = false;
@@ -122,6 +122,7 @@ app.directive("recipeBlock", function () {
                         $scope.choosenItemName = nameRec;
                         $scope.choosenItemDate = dateCreat;
                         $scope.choosenItemSrc = srcRC;
+                        $scope.choosenItemIngrd = ingredientsRC;
                         $scope.choosenItemText = $scope.itemsInfoText[indexArr];
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
@@ -326,10 +327,10 @@ app.directive("newrecipeBlock", function () {
                 //Запис рецепту в recipe_ingredients базу даних
                 $scope.currentDate = new Date();
                 let recipeObj = {
-                    name: $scope.newRecipeName,
-                    creationDate: $scope.currentDate,
+                    nameRC: $scope.newRecipeName,
+                    dateCreation: $scope.currentDate,
                     src: imgNumberName,
-                    recipe_description: $scope.newDescription,
+                    //                    recipe_description: $scope.newDescription,
                     ingredients: $scope.newIngredients
                 };
 
@@ -341,7 +342,6 @@ app.directive("newrecipeBlock", function () {
                             }, function errorCallback(response) {
                                 console.log("Error!!!" + response.err);
                             });
-
 
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
