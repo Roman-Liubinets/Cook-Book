@@ -102,7 +102,6 @@ app.directive("recipeBlock", function () {
                     console.log("Error!!!" + response.err);
                 });
 
-            $scope.recipeArr = [];
 
             //Кнопка "Перехід до товару"
             $scope.showRecipe = function (index, nameRec, dateCreat, srcRC, ingredientsRC, indexArr) {
@@ -330,13 +329,12 @@ app.directive("newrecipeBlock", function () {
                     nameRC: $scope.newRecipeName,
                     dateCreation: $scope.currentDate,
                     src: imgNumberName,
-                    //                    recipe_description: $scope.newDescription,
                     ingredients: $scope.newIngredients
                 };
 
                 $http.post('http://localhost:8000/recipe-add', recipeObj)
                     .then(function successCallback(response) {
-                        $http.get('http://localhost:8000/recipe')
+                        $http.get('http://localhost:8000/recipe_ingredients')
                             .then(function successCallback(response) {
                                 $scope.recipeArr = response.data;
                             }, function errorCallback(response) {
