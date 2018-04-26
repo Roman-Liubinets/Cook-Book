@@ -58,13 +58,19 @@ app.post('/recipe-add', function (req, res) {
 
 
 //отримання товару
-//app.get('/recipe', function (req, res) {
-//    connection.query('SELECT * FROM recipes_ingredients', function (err, rows) {
-//        if (err) throw err;
-//        console.log('get all itemss, length: ' + rows.length);
-//        res.status(200).send(rows);
-//    });
-//});
+app.get('/recipe', function (req, res) {
+    connection.query('SELECT * FROM recipes', function (err, rows) {
+        if (err) throw err;
+        console.log('get all recipes, length: ' + rows.length);
+        res.status(200).send(rows);
+    });
+});
+
+//connection.query('SELECT * FROM ingredients', function (err, rows) {
+//            if (err) throw err;
+//            console.log('get all ingredients, length: ' + rows.length);
+//            res.status(200).send(rows);
+//        });
 
 
 

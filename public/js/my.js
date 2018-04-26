@@ -17,7 +17,9 @@ app.config(function ($routeProvider) {
 });
 
 //Створюємо контроллер
-app.controller('myCtrl', function ($scope, $http) {});
+app.controller('myCtrl', function ($scope, $http) {
+    $scope.recipeArr = [];
+});
 
 //Директиви 
 app.directive("headerBlock", function () {
@@ -98,6 +100,7 @@ app.directive("recipeBlock", function () {
             $http.get('http://localhost:8000/recipe')
                 .then(function successCallback(response) {
                     $scope.recipeArr = response.data;
+                    console.log($scope.recipeArr);
                 }, function errorCallback(response) {
                     console.log("Error!!!" + response.err);
                 });
@@ -333,15 +336,10 @@ app.directive("newrecipeBlock", function () {
                     description: $scope.newDescription
                 };
 
-                $http.post('http://localhost:8000/recipe-add', recipeObj)
-                    .then(function successCallback(response) {
-                        $http.get('http://localhost:8000/recipe_ingredients')
-                            .then(function successCallback(response) {
-                                $scope.recipeArr = response.data;
-                            }, function errorCallback(response) {
-                                console.log("Error!!!" + response.err);
-                            });
 
+                $http.post('http://localhost:8000/recipe-add', recipeObj)
+                    .then(function successCallback() {
+                        console.log("Data in DB");
                     }, function errorCallback(response) {
                         console.log("Error!!!" + response.err);
                     });
