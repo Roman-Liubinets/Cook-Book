@@ -49,10 +49,10 @@ const connection = mysql.createConnection({
 //});
 
 app.post('/recipe-add', function (req, res) {
-    connection.query('INSERT INTO recipes SET creationDate = ?, src = ?, description = ?', [req.body.creationDate, req.body.src, req.body.description], function (err, result) {
+    connection.query('INSERT INTO recipes SET nameRC = ?, creationDate = ?, src = ?, description = ?', [req.body.nameRC, req.body.creationDate, req.body.src, req.body.description], function (err, result) {
         if (err) throw err;
         console.log('recipe added to database with id: ' + result.insertId);
-        connection.query('INSERT INTO recipes_ingredients SET nameRC = ?, recipe_id = ?', [req.body.nameRC, result.insertId], function (err, result2) {
+        connection.query('INSERT INTO recipes_ingredients SET   recipe_id = ?', result.insertId, function (err, result2) {
             if (err) throw err;
             console.log('recipes and ingredients added to database with id: ' + result2.insertId);
             res.sendStatus(200);
