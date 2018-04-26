@@ -329,7 +329,7 @@ app.directive("newrecipeBlock", function () {
                     nameRC: $scope.newRecipeName,
                     creationDate: $scope.currentDate,
                     src: imgNumberName,
-                    ingredients: $scope.newIngredients,
+                    ingredient: $scope.newIngredients,
                     description: $scope.newDescription
                 };
 
