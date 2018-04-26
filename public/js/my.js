@@ -105,7 +105,7 @@ app.directive("recipeBlock", function () {
 
             //Кнопка "Перехід до товару"
             $scope.showRecipe = function (index, nameRec, dateCreat, srcRC, ingredientsRC, indexArr) {
-                //                let beforeCountChanges = src.split("-");
+                let beforeCountChanges = srcRC.split("-");
                 $scope.recipePage = true;
                 $scope.newRecipe = false;
                 $scope.home = false;
@@ -327,9 +327,10 @@ app.directive("newrecipeBlock", function () {
                 $scope.currentDate = new Date();
                 let recipeObj = {
                     nameRC: $scope.newRecipeName,
-                    dateCreation: $scope.currentDate,
+                    creationDate: $scope.currentDate,
                     src: imgNumberName,
-                    ingredients: $scope.newIngredients
+                    ingredients: $scope.newIngredients,
+                    description: $scope.newDescription
                 };
 
                 $http.post('http://localhost:8000/recipe-add', recipeObj)

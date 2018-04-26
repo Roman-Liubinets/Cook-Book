@@ -40,23 +40,35 @@ const connection = mysql.createConnection({
 });
 
 // добавити рецепт
+//app.post('/recipe-add', function (req, res) {
+//    connection.query('INSERT INTO recipes_ingredients SET nameRC = ?, dateCreation = ?, src = ?, ingredients = ?', [req.body.nameRC, req.body.dateCreation, req.body.src, req.body.ingredients], function (err, result) {
+//        if (err) throw err;
+//        console.log('recipes and ingredients added to database with id: ' + result.insertId);
+//        res.sendStatus(200);
+//    });
+//});
+
 app.post('/recipe-add', function (req, res) {
-    connection.query('INSERT INTO recipes_ingredients SET nameRC = ?, dateCreation = ?, src = ?, ingredients = ?', [req.body.nameRC, req.body.dateCreation, req.body.src, req.body.ingredients], function (err, result) {
+    connection.query('INSERT INTO recipes SET creationDate = ?, src = ?, description = ?', [req.body.creationDate, req.body.src, req.body.description], function (err, result) {
         if (err) throw err;
-        console.log('recipes and ingredients added to database with id: ' + result.insertId);
-        res.sendStatus(200);
+        console.log('recipe added to database with id: ' + result.insertId);
+        connection.query('INSERT INTO recipes_ingredients SET nameRC = ?, recipe_id = ?', [req.body.nameRC, result.insertId], function (err, result2) {
+            if (err) throw err;
+            console.log('recipes and ingredients added to database with id: ' + result2.insertId);
+            res.sendStatus(200);
+        })
     });
 });
 
 
 //отримання товару
-app.get('/recipe', function (req, res) {
-    connection.query('SELECT * FROM recipes_ingredients', function (err, rows) {
-        if (err) throw err;
-        console.log('get all itemss, length: ' + rows.length);
-        res.status(200).send(rows);
-    });
-});
+//app.get('/recipe', function (req, res) {
+//    connection.query('SELECT * FROM recipes_ingredients', function (err, rows) {
+//        if (err) throw err;
+//        console.log('get all itemss, length: ' + rows.length);
+//        res.status(200).send(rows);
+//    });
+//});
 
 
 
