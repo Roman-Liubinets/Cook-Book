@@ -8,14 +8,11 @@
             <div class="recipePage-content">
                 <div class="recipePage-image">
                     <img src="img/{{choosenItemSrc}}" />
-                    <span>{{choosenItemIngrd}}</span>
                 </div>
                 <div class="recipePage-Ingr">
                     <span>Ingredients:</span>
-                    <ul>
-                        <li>first</li>
-                        <li>second</li>
-                        <li>third</li>
+                    <ul ng-repeat="i in recipeArr">
+                        <li>{{i.ingredient}}</li>
                     </ul>
                 </div>
                 <div class="recipePage-steps">
